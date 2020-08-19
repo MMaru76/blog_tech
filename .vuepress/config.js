@@ -2,22 +2,33 @@ module.exports = {
   "title": "Tabiya_Tech",
   "description": "インフラ関連をアウトプット",
   "dest": "public",
-  "head": [
-    [
-      "link",
-      {
-        "rel": "icon",
-        "href": "/favicon.ico"
-      }
-    ],
-    [
-      "meta",
-      {
-        "name": "viewport",
-        "content": "width=device-width,initial-scale=1,user-scalable=no"
-      }
-    ]
+  head: [
+    ['link', { rel: 'icon', type: 'image/jpg', href: '/favicon.png' }],
+    ['meta',{ name:"keywords", content:"vuepress, netlify"}],
+    ['meta',{ name:"og:title", content:"Tabiya Tech"}],
+    ['meta',{ name:"og:description", content:"インフラ関連をアウトプット"}],
+    ['meta',{ name:"og:type", content:"website"}],
+    ['meta',{ name:"og:url", content:"https://tabiya.dev/"}],
+    ['meta',{ name:"twitter:card", content:"summary_large_image"}],
+    ['meta',{ name:"twitter:site", content:"@M_Maru76"}],
+    ['meta',{ name:"og:image", content:"https://i.gyazo.com/b50249f536d4cfac7f8a015804b440d8.png"}],
   ],
+  // "head": [
+  //   [
+  //     "link",
+  //     {
+  //       "rel": "icon",
+  //       "href": "/favicon.ico"
+  //     }
+  //   ],
+  //   [
+  //     "meta",
+  //     {
+  //       "name": "viewport",
+  //       "content": "width=device-width,initial-scale=1,user-scalable=no"
+  //     }
+  //   ]
+  // ],
   "theme": "reco",
   "themeConfig": {
     "nav": [
