@@ -1,9 +1,17 @@
 module.exports = {
-  "title": "Tabiya_Tech",
+  "title": "Tabiya Tech",
   "description": "インフラ関連をアウトプット",
   "dest": "public",
+  plugins: {
+    '@vuepress/google-analytics': {
+        ga: 'UA-112084880-15'
+    },
+    'vuepress-plugin-sitemap': {
+    hostname: 'https://tabiya.dev' // ここにサイトのURLを設定する
+    },
+},
   head: [
-    ['link', { rel: 'icon', type: 'image/jpg', href: '/favicon.png' }],
+    ['link', { rel: 'icon', type: 'image/jpg', href: '/favicon.ico' }],
     ['meta',{ name:"keywords", content:"vuepress, netlify"}],
     ['meta',{ name:"og:title", content:"Tabiya Tech"}],
     ['meta',{ name:"og:description", content:"インフラ関連をアウトプット"}],
@@ -42,25 +50,35 @@ module.exports = {
         "link": "/timeline/",
         "icon": "reco-date"
       },
-      {
-        "text": "Docs",
-        "icon": "reco-message",
-        "items": [
-          {
-            "text": "vuepress-reco",
-            "link": "/docs/theme-reco/"
-          }
-        ]
-      },
+      // {
+      //   "text": "Docs",
+      //   "icon": "reco-message",
+      //   "items": [
+      //     {
+      //       "text": "vuepress-reco",
+      //       "link": "/docs/theme-reco/"
+      //     }
+      //   ]
+      // },
       {
         "text": "Contact",
         "icon": "reco-message",
         "items": [
           {
             "text": "GitHub",
-            "link": "https://github.com/recoluan",
+            "link": "https://github.com/maruchan76",
             "icon": "reco-github"
-          }
+          },
+          {
+            "text": "Twitter",
+            "link": "https://twitter.com/M_Maru76",
+            "icon": "reco-twitter"
+          },
+          {
+            "text": "Blog",
+            "link": "https://tabiya.jp/",
+            "icon": "reco-blog"
+          },
         ]
       }
     ],
@@ -83,28 +101,28 @@ module.exports = {
         "text": "Tag"
       }
     },
-    "friendLink": [
-      {
-        "title": "午后南杂",
-        "desc": "Enjoy when you can, and endure when you must.",
-        "email": "1156743527@qq.com",
-        "link": "https://www.recoluan.com"
-      },
-      {
-        "title": "vuepress-theme-reco",
-        "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-        "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        "link": "https://vuepress-theme-reco.recoluan.com"
-      }
-    ],
-    "logo": "/logo.png",
+    // "friendLink": [
+      // {
+      //   "title": "午后南杂",
+      //   "desc": "Enjoy when you can, and endure when you must.",
+      //   "email": "1156743527@qq.com",
+      //   "link": "https://www.recoluan.com"
+      // },
+      // {
+      //   "title": "vuepress-theme-reco",
+      //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
+      //   "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+      //   "link": "https://vuepress-theme-reco.recoluan.com"
+      // }
+    // ],
+    // "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
     "author": "Maruchan",
-    "authorAvatar": "/avatar.png",
-    "record": "xxxx",
-    "startYear": "2017"
+    "authorAvatar": "https://avatars3.githubusercontent.com/u/20497766?s=460&v=4",
+    // "record": "x",
+    "startYear": "2020"
   },
   "markdown": {
     "lineNumbers": true

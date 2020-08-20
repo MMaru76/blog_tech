@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "package": "^1.0.1",
-    "vue-class-component": "^7.2.3"
+    "vue-class-component": "^7.2.3",
+    "vuepress-plugin-sitemap": "^2.3.1"
   },
   "description": "インフラ関連をアウトプット",
   "license": "UNLICENSED"

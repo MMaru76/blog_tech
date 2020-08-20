@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: Tabiya Tech
+tagline: インフラ関連をアウトプット.
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -26,6 +26,7 @@ features:
   details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
 ---
 
+<!-- 
 # HomePages
 - [Tabiya Tech](https://tabiya.dev/)
 - [旅屋 Blog](https://tabiya.jp/)
@@ -44,4 +45,4 @@ features:
 | perf     |  パーフォマンスを向上させるための変更 |
 | test     |  テストの追加・修正 |
 | chore    |  雑用<br>ビルドに関する変更やドキュメント生成のような変更 |
-| wip      |  作業中 |
+| wip      |  作業中 | -->
