@@ -51,12 +51,16 @@ module.exports = {
         "icon": "reco-date"
       },
       // {
-      //   "text": "Docs",
-      //   "icon": "reco-message",
+      //   "text": "Editing",
+      //   "icon": "reco-edit",
       //   "items": [
       //     {
       //       "text": "vuepress-reco",
       //       "link": "/docs/theme-reco/"
+      //     },
+      //     {
+      //       "text": "other",
+      //       "link": "/blogs/oreo/"
       //     }
       //   ]
       // },
@@ -79,17 +83,28 @@ module.exports = {
             "link": "https://tabiya.jp/",
             "icon": "reco-blog"
           },
+          {
+            "text": "Qiita",
+            "link": "https://qiita.com/m_maru76",
+            "icon": "reco-qiita"
+          }
         ]
       }
     ],
-    "sidebar": {
-      "/docs/theme-reco/": [
-        "",
-        "theme",
-        "plugin",
-        "api"
-      ]
-    },
+    // "sidebar": {
+    //   "/docs/theme-reco/": [
+    //     "",
+    //     "theme",
+    //     "plugin",
+    //     "api"
+    //   ],
+    //   "/blogs/oreo/": [
+    //     "",
+    //     "oreo",
+    //     "guide",
+    //     "api"
+    //   ]
+    // },
     "type": "blog",
     "blogConfig": {
       "category": {
