@@ -1,7 +1,7 @@
 ---
 title: 【Terraform】 tfenv セットアップ手順
 description: tfenv を使った Terraform 環境の構築
-date: 20200-08-22
+date: 2020-08-22
 # sidebar: true
 sidebar: "auto"
 tags:
