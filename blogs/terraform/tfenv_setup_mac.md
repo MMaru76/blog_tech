@@ -153,6 +153,26 @@ Uninstall Terraform v0.12.25
 Terraform v0.12.25 is successfully uninstalled
 ```
 
+### 4.7. 【Terraform】タブ補完設定
+
+- 補完機能をインストール
+
+```sh
+$ terraform -install-autocomplete
+```
+
+- 使用している物に合わせる
+  - zsh : ~/.zshrc
+  - bash : ~/.bashrc
+
+```sh
+cat ~/.zshrc
+
+~~略~~
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/Cellar/tfenv/2.0.0/versions/0.13.0/terraform terraform
+```
+
 ## 5. Error List
 
 ### 5.1. スイッチ漏れ
