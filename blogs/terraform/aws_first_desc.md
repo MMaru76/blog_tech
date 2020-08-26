@@ -292,7 +292,7 @@ can't guarantee that exactly these actions will be performed if
   - 途中で【Enter a value】と対話を求められますが､【yes】と入力して削除を開始してくれる｡
 
 ```sh
-aws_vpc.tabiya_vpc: Refreshing state... [id=vpc-0bc58360acdd8c5da]
+aws_vpc.tabiya_vpc: Refreshing state... [id=vpc-]
 
 An execution plan has been generated and is shown below.
 Resource actions are indicated with the following symbols:
@@ -331,7 +331,7 @@ Do you really want to destroy all resources?
 
   Enter a value: yes
 
-aws_vpc.tabiya_vpc: Destroying... [id=vpc-0bc58360acdd8c5da]
+aws_vpc.tabiya_vpc: Destroying... [id=vpc-]
 aws_vpc.tabiya_vpc: Destruction complete after 1s
 
 Destroy complete! Resources: 1 destroyed.
