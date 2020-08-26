@@ -5,7 +5,7 @@ date: 2020-08-24
 # sidebar: true
 sidebar: "auto"
 tags:
-  - セットアップ
+  - setup
 categories:
   - Terraform
 ---

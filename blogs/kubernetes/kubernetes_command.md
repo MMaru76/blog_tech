@@ -5,7 +5,8 @@ date: 2020-08-16
 # sidebar: true
 sidebar: "auto"
 tags:
-  - Kubernetes
+  - コマンド使い方
+  - コンテナ
 categories:
   - Kubernetes
 ---
