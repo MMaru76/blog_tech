@@ -1,5 +1,5 @@
 ---
-title: 【作成中】【Minecraft】Spigot鯖構築
+title: 【Minecraft】Spigot鯖構築
 description: ちょっと立地なSpigot鯖の構築方法
 date: 2020-07-29
 category: 
@@ -12,16 +12,18 @@ categories:
   - Minecraft
 ---
 
-## はじめに<br>[Introduction.]
+## 1. はじめに
 
-オンプレミス環境を想定していますが､クラウドサービス内でも構築可能です｡<br>The system is designed for an on-premise environment, but can also be built within a cloud service.
+オンプレミス環境を想定していますが､クラウドサービス内でも構築可能です｡
 
-## ソースコードの全体<br>[The whole of the source code]
+- $ : 一般ユーザー
+- \# : root ユーザー
+- === : ファイルの中身
+- mincraft> : Minecraft のコンソール内
 
-- $ : 一般ユーザー / General User
-- \# : root ユーザー / Super User
-- === : ファイルの中身 / file contents
-- mincraft> : Minecraftのコンソール内 / In the console of Minecraft
+## 2. ソースコードの全体
+
+説明なんて不要だから､ちゃちゃっと初めたい人向け
 
 ```sh
 $ cd /opt/minecraft/
@@ -61,12 +63,11 @@ $ sudo systemctl restart minecraft_server.service
 $ sudo systemctl status minecraft_server.service
 ```
 
-## 事前準備<br>[AdvancePreparation]
+## 3. 事前準備
 
-### オンプレミスの場合のみ<br>[On-premise only]
+### 3.1. オンプレミスの場合のみ
 
 SELinux と Firewall は無効にします(必要な場合は､別途準備が必要です<作成中>)｡
-> Disable SELinux and Firewall (if you need it, you need to prepare it separately \<in the making>).
 
 ```sh
 $ sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config 
@@ -74,12 +75,13 @@ $ sudo systemctl stop firewalld ; sudo systemctl disable firewalld
 $ sudo reboot
 ```
 
-## 環境構築<br>[Construction of the Environment]
+## 4. 環境構築
 
-### 必要パッケージのインストール<br>[Installing the required packages]
+### 4.1. 必要パッケージのインストール
 
-- Java と Git のインストール / Installing Java and Git
-  
+1. Java と Git のインストール
+2. Java のバージョン確認
+
 ```sh
 $ sudo yum -y install java git
 $ java -version
@@ -89,26 +91,26 @@ $ java -version
 ```
 
 
-### 作業ディレクトリとファイルの準備
+### 4.2. 作業ディレクトリとファイルの準備
 
-- ディレクトリを作成
-  - /opt/minecraft
-- User.Groupの変更
-  - TestUser を任意のユーザー名に変更
-- サーバーのデータを取得
+1. ディレクトリを作成
+   - /opt/minecraft
+2. User.Groupの変更
+   - TestUser を任意のユーザー名に変更
 
 ```sh
 $ sudo mkdir /opt/minecraft
 $ sudo chown TestUser. /opt/minecraft/
 ```
 
-### 各種ファイルの準備
+### 4.3. 各種ファイルの準備
 
-- ディレクトリの移動
-  - /opt/minecraft
-- Spigot 本体の取得
-- 必要なファイル等の取得
-- 【spigot-X.XX.X.jar】ファイルを【server.jar】へ変更
+1. ディレクトリの移動
+   - /opt/minecraft
+2. Spigot 本体の取得
+3. 必要なファイル等の取得
+4. 【spigot-X.XX.X.jar】ファイルを【server.jar】へ変更
+5. `start.sh` ファイルを作成
 
 ```sh
 $ cd /opt/minecraft/
@@ -118,7 +120,7 @@ $ cp spigot-X.XX.X.jar server.jar
 $ touch start.sh
 ```
 
-### 実行ファイルの準備
+### 4.4. 実行ファイルの準備
 
 好きなエディターで ```start.sh``` を編集
 
@@ -133,9 +135,13 @@ $ touch start.sh
 java -Xmx2048M -Xms1024M -jar /opt/minecraft/server.jar nogui
 ```
 
-### 実行
+### 4.5. 実行
 
-- start.shに対して実行権限を付与
+1. `start.sh` に対して実行権限を付与
+2. `start.sh` を実行して､自動的に止まらせる
+3. 規約書に同意
+4. 再度 `start.sh` を実行
+5. 各種生成が完了したら､`stop` と入力して一旦サーバを止める
 
 ```sh
 $ chmod +x start.sh
@@ -145,10 +151,15 @@ $ sh start.sh
 minecraft> stop
 ```
 
-### 自動化
+### 4.6. 自動化
+
+- Minecraft ようの Unit 定義ファイルを新規作成
+
 ```sh
 sudo vim /etc/systemd/system/minecraft_server.service
 ```
+
+- 記述内容
 
 ```vim
 [Unit]
@@ -166,13 +177,23 @@ Group=TestUser
 WantedBy=multi-user.target
 ```
 
+1. デーモンリロード
+2. Unit が Service として認識されたか確認
+3. Minecraft サーバーを起動 ON
+4. Minecraft サーバーを自動起動 ON
+
 ```sh
 $ sudo systemctl daemon-reload
-$ sudo systemctl restart minecraft_server.service
-$ sudo systemctl status minecraft_server.service
+$ sudo systemctl list-unit-files --type=service | grep "minecraft_server"
+$ sudo systemctl start minecraft_server.service
+$ sudo systemctl enable minecraft_server.service
 ```
 
-## 余分な実装
+---
+
+## 5. 余分な実装
+
+こちらは特に解説は無いです｡将来的に実装する予定ですが､現状全く使っていないです｡
 
 ```sh
 touch movecp.sh
