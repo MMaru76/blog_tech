@@ -70,7 +70,7 @@ module.exports = {
         "items": [
           {
             "text": "GitHub",
-            "link": "https://github.com/maruchan76",
+            "link": "https://github.com/MMaru76",
             "icon": "reco-github"
           },
           {
@@ -85,7 +85,7 @@ module.exports = {
           },
           {
             "text": "Qiita",
-            "link": "https://qiita.com/m_maru76",
+            "link": "https://qiita.com/MMaru76",
             "icon": "reco-qiita"
           }
         ]
