@@ -1,5 +1,5 @@
 ---
-title: 【Minecraft】Datadog を使った監視を真面目に考えてみる
+title: 【Minecraft】Datadog を使った監視を考えてみる
 description: Minecraft を使った監視の勉強
 date: 2020-09-08
 category: 
