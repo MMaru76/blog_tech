@@ -70,7 +70,7 @@ $ sudo systemctl status minecraft_server.service
 SELinux と Firewall は無効にします(必要な場合は､別途準備が必要です<作成中>)｡
 
 ```sh
-$ sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config 
+$ sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config
 $ sudo systemctl stop firewalld ; sudo systemctl disable firewalld
 $ sudo reboot
 ```

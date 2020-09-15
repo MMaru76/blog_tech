@@ -1,6 +1,6 @@
 ---
 title: 【Media系】Live配信サーバの簡単構築
-date: 2018-11-27
+date: 2018-11-28
 category: 
 # sidebar: true
 sidebar: "auto"

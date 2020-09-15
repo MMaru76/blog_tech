@@ -28,7 +28,6 @@ categories:
 
 今回は”Big Buck Bunny”コンテンツを[ダウンロード](http://bbb3d.renderfarming.net/download.html)しました。
 
-
 ### 1.3. 使用するブラウザー
 
 - Safari
@@ -144,9 +143,8 @@ Job Status が **Complete** になったら出力成功です｡
 
 - 本当に見れるかSafariやEdgeまたはiphoneで確認してみよう｡
 
-
 ::: tip
-https://vod-test.cloudfront.net/output-01/vod_test.m3u8</br>
+<https://vod-test.cloudfront.net/output-01/vod_test.m3u8></br>
 作成した cloudfront の Domain Name に置き換えてください｡
 :::
 
@@ -217,7 +215,7 @@ Job Status が **Complete** になったら出力成功です｡
 - 本当に見れるかSafariやEdgeまたはiphoneで確認してみよう｡
 
 ::: tip
-https://vod-test.cloudfront.net/output-02/master.m3u8</br>
+<https://vod-test.cloudfront.net/output-02/master.m3u8></br>
 作成した CloudFront の Domain Name に置き換えてください｡
 :::
 
@@ -229,7 +227,9 @@ https://vod-test.cloudfront.net/output-02/master.m3u8</br>
 
 [![Image from Gyazo](https://i.gyazo.com/593a7396c17a7d59109e416ec6b09786.png)](https://gyazo.com/593a7396c17a7d59109e416ec6b09786)
 
-**以上で AWS だけで VOD 配信をしてみたでした｡**
+以上で AWS だけで VOD 配信をしてみたでした｡
+
+---
 
 ## 6. 最後に
 
