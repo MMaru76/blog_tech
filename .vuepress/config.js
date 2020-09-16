@@ -39,6 +39,10 @@ module.exports = {
   // ],
   "theme": "reco",
   "themeConfig": {
+    "codeTheme": 'funky',
+    "mode": 'dark',
+    "modePicker": true,
+    // "subSidebar": 'auto',
     "nav": [
       {
         "text": "Home",
