@@ -138,7 +138,7 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
-    "author": "Maruchan</br>まるちゃん",
+    "author": "まるちゃん",
     "authorAvatar": "https://avatars3.githubusercontent.com/u/20497766?s=460&v=4",
     // "record": "x",
     "startYear": "2020"
