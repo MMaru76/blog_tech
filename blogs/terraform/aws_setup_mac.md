@@ -109,6 +109,23 @@ direnv: export +AWS_ACCESS_KEY_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY
 
 :::
 
+### 2.4. エラーが発生する場合
+
+下記のようなエラーが発生する場合は､ `$ direnv allow` を実行
+
+```sh
+direnv: error $HOME/Work_Dir/.envrc is blocked. Run `direnv allow` to approve its content 
+```
+
+- `direnv allow` を実行して有効化
+
+```sh
+$ direnv allow
+
+direnv: loading $HOME/Work_Dir/.envrc
+direnv: export +AWS_ACCESS_KEY_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY
+```
+
 ## 3. Terraform の文法解説
 
 Terraform はHCLというHashicorm遠くじの言語を使用している｡また､HCLはJsonとの互換性がある｡
