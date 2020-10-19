@@ -1,11 +1,11 @@
 ---
-title: 【シェルスクリプト】while文とsedコマンドを使って先頭に文字を付与
-description: shell scriptの
+title: 【Linux】while文とsedコマンドを使って先頭に文字を付与
 date: 2020-06-11
 # 1. sidebar: true
 sidebar: "auto"
 tags:
   - Linuxコマンド
+  - Shell Script
 categories:
   - Linux
 ---
