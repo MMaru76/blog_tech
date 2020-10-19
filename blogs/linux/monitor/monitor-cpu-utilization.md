@@ -1,9 +1,10 @@
 ---
-title: 【Linux】 CPU使用率を監視する方法とコマンドの解説
-date: 2020-10-17
+title: 【Linux】 CPU使用率をモニタリングする方法とコマンドの解説
+date: 2020-10-20
 # sidebar: true
 tags:
-  - 監視
+  - モニタリング
+  - コマンド解説
 categories:
   - Linux
 ---
