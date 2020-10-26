@@ -12,8 +12,6 @@ categories:
  - AWS
 ---
 
-# 【EC2 Amazon Linux2】WordPressをLEMPでの構築手順
-
 LEMP を使った WordPress の簡単な構築手順
 
 
