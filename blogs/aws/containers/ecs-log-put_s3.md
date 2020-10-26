@@ -107,6 +107,68 @@ CloudWatch のログに書き込みを行うと0.76USD/GB掛かって辛いで�
 
 [![Image from Gyazo](https://i.gyazo.com/c804fd16eafbff0773e7ed74ca040d11.png)](https://gyazo.com/c804fd16eafbff0773e7ed74ca040d11)
 
+#### サンプル json
+
+- 上の群 : log_router コンテナ
+- 下の群 : ogS3-lxc コンテナ
+
+```json
+{
+    "executionRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXX:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "firelens-container",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-create-group": "true",
+                    "awslogs-stream-prefix": "firelens"
+                }
+            },
+            "cpu": 0,
+            "image": "906394416424.dkr.ecr.ap-northeast-1.amazonaws.com/aws-for-fluent-bit:latest",
+            "firelensConfiguration": {
+                "type": "fluentbit"
+            },
+            "essential": true,
+            "user": "0",
+            "name": "log_router"
+        },
+        {
+            "logConfiguration": {
+                "logDriver": "awsfirelens",
+                "options": {
+                    "Name": "s3",
+                    "bucket": "tabiya-logs",
+                    "total_file_size": "250M",
+                    "region": "ap-northeast-1"
+                }
+            },
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ],
+            "cpu": 0,
+            "image": "XXXXXXXXXXXXXXXX.dkr.ecr.ap-northeast-1.amazonaws.com/maruya:latest",
+            "essential": true,
+            "name": "LogS3-lxc"
+        }
+    ],
+    "memory": "512",
+    "taskRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXX:role/ecsTaskExecutionRole",
+    "family": "tabiya_nginx_ver",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256"
+}
+```
+
 ## 4. 実際の画面
 
 ---
