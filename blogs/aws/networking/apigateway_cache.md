@@ -21,6 +21,7 @@ categories:
 
 - 【2. API Gatewat キャッシュ有効時の挙動について】
 - 【3. API Gateway キャッシュ有効化手順】
+- 【4. API Gateway メトリクス】
 
 ---
 ---
