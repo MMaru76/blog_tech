@@ -1,6 +1,6 @@
 ---
 title: 【AWS API Gateway】キャッシュ有効化時の解説と有効化手順
-date: 2020-10-31
+date: 2020-10-30
 # sidebar: true
 sidebar: "auto"
 tags:
