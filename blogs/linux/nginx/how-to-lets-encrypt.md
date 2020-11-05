@@ -15,13 +15,15 @@ categories:
 
 対象環境は `CentOS 7` です｡
 
+[【Linux】 CentOS7 + Nginx Install](https://tabiya.dev/blogs/linux/nginx/how-to-nginx-install.html)
+
 ## 2. Let’s Encrypt の導入方法
 
 ---
 
-作業自体は､すべて rootユーザー で作業しています｡
+作業自体は､すべて root ユーザー で作業しています｡
 
-### 2.1. EPELリポジトリのインストール
+### 2.1. EPEL リポジトリのインストール
 
 ---
 
@@ -51,7 +53,7 @@ sed -i /etc/sysconfig/certbot \
 -e "/^RENEW_HOOK/ s/\"\"/\"--renew-hook 'systemctl restart nginx'\"/"
 ```
 
-### 2.4. certbotコマンドで証明書の取得
+### 2.4. certbot コマンドで証明書の取得
 
 ---
 
@@ -77,9 +79,9 @@ sed -i /etc/sysconfig/certbot \
 
 ---
 
-HTTPSでアクセス出来るように設定をしています｡
+HTTPS でアクセス出来るように設定をしています｡
 
-### 3.1. 443番ポートでアクセスする先の作成
+### 3.1. 443 番ポートでアクセスする先の作成
 
 ---
 
@@ -106,7 +108,7 @@ HTTPSでアクセス出来るように設定をしています｡
 ---
 
 ```sh
-// sample_sslじゃなくても大丈夫
+// sample_ssl じゃなくても大丈夫
 # vim /etc/nginx/conf.d/sample_ssl.conf
 ```
 
@@ -120,13 +122,13 @@ server {
 }
 ```
 
-### 3.3. HTTPアクセスをHTTPSリダイレクトへ
+### 3.3. HTTP アクセスを HTTPS リダイレクトへ
 
 ---
 
 こちらの記述は自由です｡
 
-server内に｢`return 301 https://$host$request_uri;`｣を記述するだけです｡
+server 内に｢`return 301 https://$host$request_uri;`｣を記述するだけです｡
 
 ```sh
 # vim /etc/nginx/conf.d/default.conf
@@ -173,4 +175,4 @@ server {
 
 以上で､CentOS7 の Nginx & Let’s Encrypt の導入方法でした｡
 
-迷った際は､とりあえず｢nginx -t｣を実行してみましょう｡
+迷った際は､とりあえず `nginx -t` を実行してみましょう｡

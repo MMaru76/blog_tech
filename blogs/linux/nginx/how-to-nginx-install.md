@@ -83,18 +83,18 @@ Loading mirror speeds from cached hostfile
 nginx                    | 2.9 kB  00:00:00
 nginx/x86_64/primary_db  | 154 kB  00:00:02
 利用可能なパッケージ
-名前              : nginx
-アーキテクチャー    : x86_64
-エポック           : 1
-バージョン         : 1.17.3
-リリース           : 1.el7.ngx
-容量               : 767 k
-リポジトリー        : nginx/x86_64
-要約               : High performance web server
-URL               : http://nginx.org/
-ライセンス          : 2-clause BSD-like license
-説明               : nginx [engine x] is an HTTP and reverse proxy server, as well as
-                  : a mail proxy server.
+名前: nginx
+アーキテクチャー   : x86_64
+エポック          : 1
+バージョン        : 1.17.3
+リリース          : 1.el7.ngx
+容量             : 767 k
+リポジトリー      : nginx/x86_64
+要約             : High performance web server
+URL             : http://nginx.org/
+ライセンス        : 2-clause BSD-like license
+説明             : nginx [engine x] is an HTTP and reverse proxy server, as well as
+                : a mail proxy server.
 ```
 
 ### 3.2. Nginx のインストール
@@ -182,9 +182,15 @@ server {
 
 [![Image from Gyazo](https://i.gyazo.com/f674a5445dbe0977c071ab3e83cc52c0.png)](https://gyazo.com/f674a5445dbe0977c071ab3e83cc52c0)
 
-ドメインが.devの為､HTTPがアクセス出来ません･･･(普通のドメインならHTTPアクセス出来ます｡)
+ドメインが `.dev` の為､ HTTP がアクセス出来ません･･･(普通のドメインなら HTTP アクセス出来ます｡)
 
 ::: tip
 - [こんにちは、.dev！](https://developers-jp.googleblog.com/2019/02/dev.html)
 - [Google Chromeで.devなどの開発DomainがHTTPSに変更される。](https://qiita.com/lara_bell/items/f7f3c5189530090229ed)
 - [Googleがデベロッパー向けドメイン「.dev」の先取りプログラムを開始。優先的にドメイン名を確保可能](https://www.publickey1.jp/blog/19/googledev.html)
+
+## 5. HTTPS の仕方
+
+---
+
+[【Linux】 CentOS7 + Nginx + Let’s Encrypt](https://tabiya.dev/blogs/linux/nginx/how-to-lets-encrypt.html)
