@@ -5,7 +5,7 @@ date: 2020-06-21
 # sidebar: true
 sidebar: "auto"
 tags:
-  - nginx
+  - Nginx
   - WordPress
   - EC2
 categories:

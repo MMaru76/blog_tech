@@ -5,7 +5,7 @@ date: 2020-05-24
 # sidebar: true
 sidebar: "auto"
 tags:
-  - nginx
+  - Nginx
   - EC2
 categories:
  - AWS
