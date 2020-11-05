@@ -15,7 +15,9 @@ categories:
 
 対象環境は `CentOS 7` です｡
 
-[【Linux】 CentOS7 + Nginx Install](https://tabiya.dev/blogs/linux/nginx/how-to-nginx-install.html)
+## Nginx 環境構築手順
+
+- [【Linux】 CentOS7 + Nginx Install](https://tabiya.dev/blogs/linux/nginx/how-to-nginx-install.html)
 
 ## 2. Let’s Encrypt の導入方法
 

@@ -188,6 +188,7 @@ server {
 - [こんにちは、.dev！](https://developers-jp.googleblog.com/2019/02/dev.html)
 - [Google Chromeで.devなどの開発DomainがHTTPSに変更される。](https://qiita.com/lara_bell/items/f7f3c5189530090229ed)
 - [Googleがデベロッパー向けドメイン「.dev」の先取りプログラムを開始。優先的にドメイン名を確保可能](https://www.publickey1.jp/blog/19/googledev.html)
+:::
 
 ## 5. HTTPS の仕方
 
