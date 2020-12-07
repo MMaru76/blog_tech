@@ -5,9 +5,10 @@ date: 2020-12-06
 sidebar: "auto"
 tags:
   - rbenv
-categories:
-  - Ruby
   - EC2
+  - Ruby
+categories:
+  - Programming language
 ---
 
 ## 1. はじめに
