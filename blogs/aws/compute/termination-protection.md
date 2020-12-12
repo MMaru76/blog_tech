@@ -9,7 +9,7 @@ categories:
   - AWS
 ---
 
-## はじめに
+## 1. はじめに
 
 はい｡こちらの Tweet...にも書いてあるとおり､誤って作業鯖を消してしまいました｡
 
@@ -19,12 +19,12 @@ categories:
 
 ~~(ちなみに､発覚した後は､一日中ずっっっっっっっと胃が痛かったです｡)~~
 
-## 終了保護(Termination protection)とは
+## 2. 終了保護(Termination protection)とは
 
 `DisableApiTermination` 属性の有効/無効を定義するものです｡
 有効になっている場合は､【API(マネジメントコンソール/CLI/API)】等によるインスタンスの終了(削除)を防止することが出来ます｡
 
-`デフォルトでは無効`になっています｡
+- デフォルトでは`無効`になっています｡
 
 終了保護が有効なインスタンスを新マネジメントコンソールから削除しようとした時は下記画像のヘッダーのようにエラーが表示されます｡
 
@@ -53,7 +53,7 @@ Modify its 'disableApiTermination' instance attribute and try again.
 
 :::
 
-## 終了保護の設定手順
+## 3. 終了保護の設定手順
 
 1. 終了保護を掛けたいインスタンスを選択
 2. 【アクション】→【インスタンスの設定】→【終了保護を変更】を選択
@@ -67,7 +67,7 @@ Modify its 'disableApiTermination' instance attribute and try again.
 
 [![Image from Gyazo](https://i.gyazo.com/ef0f70d5294281b7474f43cdc8fc0b57.png)](https://gyazo.com/ef0f70d5294281b7474f43cdc8fc0b57)
 
-## さいごに
+## 4. さいごに
 
 本当に､申し訳ない事をしてしまった･･･そしてガチで動いているサービスじゃなくて良かった｡
 
