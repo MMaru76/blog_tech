@@ -1,5 +1,5 @@
 ---
-title: 【Linux】ssh no matching key exchange method found.
+title: 【Linux SSH】ssh no matching key exchange method found.
 date: 2020-06-04
 # 1. sidebar: true
 sidebar: "auto"

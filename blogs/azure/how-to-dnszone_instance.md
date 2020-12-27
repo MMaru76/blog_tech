@@ -9,7 +9,7 @@ categories:
 
 [![Image from Gyazo](https://i.gyazo.com/c8ed7637b8acc53acbceaba3764fb005.png)](https://gyazo.com/c8ed7637b8acc53acbceaba3764fb005)
 
-## 前提条件
+## 1. 前提条件
 
 - Microsoft アカウント
 - 有効なAzure サブスクリプション
@@ -18,9 +18,9 @@ categories:
   - ここで出現している｢merou.info｣は､私のドメインの為､個人で購入したドメインをご使用ください｡
   - ドメイン購入場所は｢バリュードメイン｣や｢お名前ドットコム｣などで事前に購入｡
 
-## DNS編
+## 2. DNS編
 
-### DNS ゾーンを作成
+### 2.1. DNS ゾーンを作成
 
 1. Chrome等のブラウザで ｢[Azure Portal](https://portal.azure.com/)｣ にアクセス
 2. 左上側の ｢ハンバーガーマーク｣ をクリック
@@ -51,7 +51,7 @@ categories:
 
 [![Image from Gyazo](https://i.gyazo.com/b5aab429522dd4026794a3bb6734095e.png)](https://gyazo.com/b5aab429522dd4026794a3bb6734095e)
 
-### 仮想マシン構築編
+### 2.2. 仮想マシン構築編
 
 1. Chrome等のブラウザで ｢Azure Portal｣ にアクセス
 2. 左上側の ｢ハンバーガーマーク｣ をクリック
@@ -96,7 +96,7 @@ categories:
 
 [![Image from Gyazo](https://i.gyazo.com/52d38d59c58a50b3553fad0af14c9089.png)](https://gyazo.com/52d38d59c58a50b3553fad0af14c9089)
 
-### 仮想マシンのWeb サーバーの80番ポートを開ける｡
+### 2.3. 仮想マシンのWeb サーバーの80番ポートを開ける｡
 
 1. 先程作成した､仮想マシンをクリックして表示
 2. 左側に表示されている､｢ネットワーク｣ をクリック
@@ -122,7 +122,7 @@ categories:
 
 [![Image from Gyazo](https://i.gyazo.com/b87e1b4979ece7a563c2635689eeb94d.png)](https://gyazo.com/b87e1b4979ece7a563c2635689eeb94d)
 
-### 仮想マシンとDNSの設定
+### 2.4. 仮想マシンとDNSの設定
 
 1. 仮想マシンをクリックして､｢概要｣ 画面を表示
 2. ｢パブリックIPアドレス｣ をコピーする
@@ -147,9 +147,9 @@ categories:
 
 [![Image from Gyazo](https://i.gyazo.com/8f00e9f22cb231077f1fbc9e709aebff.png)](https://gyazo.com/8f00e9f22cb231077f1fbc9e709aebff)
 
-## SSH編
+## 3. SSH編
 
-### SSHクライアントツールを起動
+### 3.1. SSHクライアントツールを起動
 
 1. ｢SSH クライアント｣ を起動
    - 今回は､Windows10 ということもあり [Poderosa](https://sourceforge.net/projects/poderosa/) を使用しています｡
@@ -177,23 +177,23 @@ $ sudo su -
 
 [![Image from Gyazo](https://i.gyazo.com/2d0520a16324a530492bd959d74e8759.png)](https://gyazo.com/2d0520a16324a530492bd959d74e8759)
 
-## WEBサイトアクセス編
+## 4. WEBサイトアクセス編
 
 1. 個人で作成した､｢ドメイン｣ or ｢IP アドレス｣ でアクセス
 2. 以下の様な画面が表示されれば､完了です｡
 
 [![Image from Gyazo](https://i.gyazo.com/5e33e626c94d4d845abbecb262bfdd79.png)](https://gyazo.com/5e33e626c94d4d845abbecb262bfdd79)
 
-## 各種削除編
+## 5. 各種削除編
 
-### 仮想マシンの削除
+### 5.1. 仮想マシンの削除
 
 1. 作成した仮想マシンの画面を表示
 2. ｢削除｣ をクリックして､仮想マシンを削除
 
 [![Image from Gyazo](https://i.gyazo.com/b5406fd45b095de505d09bb3b5b0a2ef.png)](https://gyazo.com/b5406fd45b095de505d09bb3b5b0a2ef)
 
-### レコードの削除
+### 5.2. レコードの削除
 
 1. DNSゾーンの画面を表示
 2. 作成したレコードの ｢･･･｣ をクリック
@@ -203,6 +203,6 @@ $ sudo su -
 
 以上で ｢DNS ゾーン｣設定､｢仮想マシンの作成｣､｢Webサーバ構築｣､｢各種削除｣まででした｡
 
-## 最後に
+## 6. 最後に
 
 こちらを応用すれば､AWSのRoute53でも使用することが出来ます｡
