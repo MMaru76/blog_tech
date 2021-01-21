@@ -191,39 +191,41 @@ $ sudo systemctl enable minecraft_server.service
 
 ---
 
-## 5. 余分な実装
+## 5. Nginx リバースプロキシ設定
 
-こちらは特に解説は無いです｡将来的に実装する予定ですが､現状全く使っていないです｡
+> /etc/nginx/conf.d/minecraft.conf
 
-```sh
-touch movecp.sh
-chmod +x movecp.sh
+```vim
+server {
+  listen 80;
+  return 301 https://$host$request_uri;
+  server_name m.tabiya.me;
+  location /map/ {
+    proxy_pass http://localhost:8123/;
+  }
+  location / {
+    root /var/www/minecraft;
+  }
+}
 ```
 
-```sh
-LASTLOG=`tail -n 1 /opt/minecraft/logs/latest.log`
-LOGDIR=/opt/minecraft/logs/
-INFO_LOG=$LOGDIR"info_minecraft.log"
-UUID_LOG=$LOGDIR"uuid_minecraft.log"
-WARN_LOG=$LOGDIR"warn_minecraft.log"
-ERROR_LOG=$LOGDIR"error_minecraft.log"
-UNKNOWN_LOG=$LOGDIR"unknown_minecraft.log"
+> /etc/nginx/conf.d/minecraft_ssl.conf
 
-
-if [[ $LASTLOG == *"UUID"* ]]
-then
-    echo `date` : $LASTLOG >> $UUID_LOG
-
-elif [[ $LASTLOG == *"WARN"* || $LASTLOG == *"warn"* ]]
-then
-    echo `date` : $LASTLOG >> $WARN_LOG
-
-elif [[ $LASTLOG == *"ERROR"* || $LASTLOG == *"error"* ]]
-then
-    echo `date` : $LASTLOG >> $ERROR_LOG
-
-else
-    echo `date` : $LASTLOG >> $UNKNOWN_LOG
-
-fi
-```
+```vim
+server {
+  listen 443 ssl;
+  server_name me.tabiya.me;
+  ssl_certificate  /etc/letsencrypt/live/m.tabiya.me/fullchain.pem;
+  ssl_certificate_key  /etc/letsencrypt/live/m.tabiya.me/privkey.pem;
+  location /map/ {
+    proxy_pass http://localhost:8123/;
+    # stub_status on;
+  }
+  location / {
+    root /var/www/minecraft;
+    # stub_status on;
+  }
+  location /nginx_status {
+    stub_status on;
+  }
+}
