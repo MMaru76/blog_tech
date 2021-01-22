@@ -199,12 +199,10 @@ $ sudo systemctl enable minecraft_server.service
 server {
   listen 80;
   return 301 https://$host$request_uri;
-  server_name m.tabiya.me;
-  location /map/ {
-    proxy_pass http://localhost:8123/;
-  }
+  server_name サーバーネーム;
+
   location / {
-    root /var/www/minecraft;
+    proxy_pass http://localhost:8123/;
   }
 }
 ```
@@ -214,18 +212,13 @@ server {
 ```vim
 server {
   listen 443 ssl;
-  server_name me.tabiya.me;
-  ssl_certificate  /etc/letsencrypt/live/m.tabiya.me/fullchain.pem;
-  ssl_certificate_key  /etc/letsencrypt/live/m.tabiya.me/privkey.pem;
-  location /map/ {
+  server_name サーバーネーム;
+  ssl_certificate  /etc/letsencrypt/live/サーバーネーム/fullchain.pem;
+  ssl_certificate_key  /etc/letsencrypt/live/サーバーネーム/privkey.pem;
+
+  location / {
     proxy_pass http://localhost:8123/;
     # stub_status on;
   }
-  location / {
-    root /var/www/minecraft;
-    # stub_status on;
-  }
-  location /nginx_status {
-    stub_status on;
-  }
 }
+```
