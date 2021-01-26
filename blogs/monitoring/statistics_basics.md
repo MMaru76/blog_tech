@@ -4,8 +4,7 @@ date: 2021-01-26
 category:
 # sidebar: true
 sidebar: "auto"
-tags:
-  - 座学
+# tags:
 categories:
   - Monitoring
 ---
