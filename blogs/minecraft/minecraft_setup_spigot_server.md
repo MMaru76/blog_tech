@@ -2,7 +2,7 @@
 title: 【Minecraft】Spigot鯖構築
 description: ちょっと立地なSpigot鯖の構築方法
 date: 2020-07-29
-category: 
+category:
 # sidebar: true
 sidebar: "auto"
 tags:
