@@ -2,7 +2,7 @@
 title: 【Minecraft】Datadog を使った監視を考えてみる
 description: Minecraft を使った監視の勉強
 date: 2020-09-08
-category: 
+category:
 # sidebar: true
 sidebar: "auto"
 tags:
@@ -10,7 +10,7 @@ tags:
   - 監視
 categories:
   - Minecraft
-  - Datadog
+  - Monitoring
 ---
 
 ## 1. はじめに
