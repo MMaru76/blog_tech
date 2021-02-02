@@ -5,8 +5,8 @@ date: 2020-09-06
 sidebar: "auto"
 tags:
   - やらかしシリーズ
-categories:
   - Datadog
+categories:
   - Monitoring
 ---
 
