@@ -1,12 +1,12 @@
 ---
-title: 【やってみた系】AWS VPC Reachability Analyzer を触ってみた
+title: 【AWS VPC】VPC Reachability Analyzer を触ってみた
 date: 2020-12-20
 # sidebar: true
 sidebar: "auto"
 tags:
   - VPC
 categories:
-  - やってみた系
+  - AWS
 ---
 
 [![Image from Gyazo](https://i.gyazo.com/4fbdfad09e30013c582c64ceecb4d57b.png)](https://gyazo.com/4fbdfad09e30013c582c64ceecb4d57b)
