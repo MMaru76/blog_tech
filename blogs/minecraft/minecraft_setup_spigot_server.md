@@ -6,7 +6,7 @@ category:
 # sidebar: true
 sidebar: "auto"
 tags:
-  - CentOS7
+  - CentOS 7
   - Spigot
 categories:
   - Minecraft

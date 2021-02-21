@@ -5,6 +5,7 @@ date: 2020-11-06
 tags:
   - Nginx
   - Let’s Encrypt
+  - Centos 7
 categories:
   - Linux
 ---

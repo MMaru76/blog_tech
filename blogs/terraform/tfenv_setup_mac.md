@@ -9,8 +9,8 @@ tags:
 categories:
   - Terraform
 ---
-
 ## 1. はじめに
+
 改めて Terraform を勉強しようと思い【[はじめての人のための Terraform for AWS](https://amzn.to/327bVly)】を購入してしまいました！
 
 Terraform を Mac に入れる時と躓いた時に見るページ

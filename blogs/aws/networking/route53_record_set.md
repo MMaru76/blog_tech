@@ -5,7 +5,7 @@ date: 2021-02-07
 sidebar: "auto"
 tags:
   - Route53
-  - CentOS8
+  - CentOS 8
 categories:
   - AWS
 ---

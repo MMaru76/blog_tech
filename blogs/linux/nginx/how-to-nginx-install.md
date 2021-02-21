@@ -4,6 +4,7 @@ date: 2020-11-05
 # sidebar: true
 tags:
   - Nginx
+  - CentOS 7
 categories:
   - Linux
 ---
