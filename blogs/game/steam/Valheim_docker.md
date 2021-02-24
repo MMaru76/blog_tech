@@ -1,7 +1,7 @@
 ---
 title: 【備忘録】【Steam】Docker を使った Valheim ゲームサーバー構築手順
 description: ちょっと立地なSpigot鯖の構築方法
-date: 2021-02-21
+date: 2021-02-24
 category:
 # sidebar: true
 sidebar: "auto"
@@ -17,6 +17,13 @@ categories:
 [![Image from Gyazo](https://i.gyazo.com/668a5b6b710b3e9207113de955a6742b.png)](https://gyazo.com/668a5b6b710b3e9207113de955a6742b)
 
 ## 1. はじめに
+
+トロール神ゲーをしたくありませんか?
+
+[![Image from Gyazo](https://i.gyazo.com/1942a991122b7dd9c2709d878951c7d8.png)](https://gyazo.com/1942a991122b7dd9c2709d878951c7d8)
+
+それでは､まず･･･Steam で買ってもろて｡</br>
+[Valheim](https://store.steampowered.com/app/892970/Valheim/?l=japanese)
 
 すべてを Docker 化してやりたい｡
 
