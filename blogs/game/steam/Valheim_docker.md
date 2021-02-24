@@ -9,6 +9,7 @@ tags:
   - CentOS 8
   - Docker
   - Steam
+  - Linux
 categories:
   - Valheim
   - Game Server

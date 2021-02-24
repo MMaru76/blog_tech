@@ -8,6 +8,7 @@ sidebar: "auto"
 tags:
   - CentOS 7
   - Spigot
+  - Linux
 categories:
   - Minecraft
   - Game Server

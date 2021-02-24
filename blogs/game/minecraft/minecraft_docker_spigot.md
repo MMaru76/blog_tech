@@ -9,6 +9,7 @@ tags:
   - CentOS 8
   - Spigot
   - Docker
+  - Linux
 categories:
   - Minecraft
   - Game Server
