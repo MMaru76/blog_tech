@@ -165,23 +165,25 @@ docker-compose -f /home/ユーザー名/valheim/docker-compose.yml down
 
 > 現時点の Tree 構造
 
-```sh
+```html
 $ tree
 .
 ├── docker-compose.yml
 ├── test.log
 └── valheim_dh
     ├── backups
-    │   ├── 省略
     ├── saves
     │   ├── adminlist.txt
     │   ├── bannedlist.txt
     │   ├── permittedlist.txt
     │   ├── prefs
     │   └── worlds
-    │       └── Dedicated.fwl
+    │       ├── Dedicated.db
+    │       ├── Dedicated.db.old
+    │       ├── Dedicated.fwl
+    │       └── Dedicated.fwl.old
     └── server
-        ├── LinuxPlayer_s.debug
+        ├── LinuxPlayer_s.debugt
         ├── UnityPlayer.so
         ├── UnityPlayer_s.debug
         ├── Valheim Dedicated Server Manual.pdf
@@ -210,11 +212,39 @@ $ tree
             ├── Managed
             │   └── 省略
             ├── MonoBleedingEdge
-            │   ├── etc
-            │   │   └── 省略
+            │   └── 省略
+            ├── Plugins
+            │   └── libsteam_api.so
+            ├── Resources
+            │   ├── UnityPlayer.png
+            │   ├── unity default resources
+            │   └── unity_builtin_extra
+            ├── app.info
+            ├── boot.config
+            ├── globalgamemanagers
+            ├── globalgamemanagers.assets
+            ├── globalgamemanagers.assets.resS
+            ├── level0
+            ├── level0.resS
+            ├── level1
+            ├── level2
+            ├── level3
+            ├── level4
+            ├── level4.resS
+            ├── resources.assets
+            ├── resources.assets.resS
+            ├── sharedassets0.assets
+            ├── sharedassets0.assets.resS
+            ├── sharedassets1.assets
+            ├── sharedassets1.assets.resS
+            ├── sharedassets1.resource
+            ├── sharedassets2.assets
+            ├── sharedassets3.assets
+            ├── sharedassets3.assets.resS
+            ├── sharedassets3.resource
+            └── sharedassets4.assets
 
 27 directories, 129 files
-
 ```
 
 ## 5. データの初期化方法
