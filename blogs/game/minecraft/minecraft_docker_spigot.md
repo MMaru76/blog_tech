@@ -62,7 +62,7 @@ sudo reboot
 
 ```sh
 sudo dnf -y upgrade; sudo dnf module -y install python38;sudo dnf install -y nginx git
-curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
+sudo curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
 sudo sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
 sudo dnf --enablerepo=docker-ce-stable -y install docker-ce
 sudo systemctl enable --now docker
@@ -88,9 +88,9 @@ sudo docker login
    - ユーザー名 : ec2-user など
 
 ```sh
-curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/sudo docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod 755 /usr/local/bin/docker-compose
-sudo docker-compose --version
+docker-compose --version
 sudo usermod -a -G docker ユーザー名
 ```
 
