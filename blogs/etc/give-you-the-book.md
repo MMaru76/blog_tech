@@ -50,7 +50,7 @@ categories:
 
 お譲りする本の全体像は下記画像を確認してください｡
 
-- [https://gyazo.com/collections/378bda5a2e3432469514698ed9ff5ef7](https://gyazo.com/collections/378bda5a2e3432469514698ed9ff5ef7)
+[https://gyazo.com/collections/378bda5a2e3432469514698ed9ff5ef7](https://gyazo.com/collections/378bda5a2e3432469514698ed9ff5ef7)
 
 ## 3. IaC系
 
