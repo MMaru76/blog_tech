@@ -1,4 +1,4 @@
----
+<!-- ---
 title: 本をお譲りいたします｡
 date: 2021-04-24
 category:
@@ -7,7 +7,7 @@ sidebar: "auto"
 tags:
 categories:
   - etc
----
+--- -->
 
 (手抜きです｡)
 
