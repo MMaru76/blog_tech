@@ -102,7 +102,7 @@ sudo usermod -a -G docker ユーザー名
 
 ```sh
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo mkdir -P /var/www/html
+sudo mkdir -p /var/www/html
 sudo vim /var/www/html/index.html
 sudo certbot certonly --webroot -w /var/www/html -d 任意のドメイン
 ```
