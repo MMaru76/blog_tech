@@ -26,6 +26,12 @@ actionLink: /views/other/guide
 #   details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
 ---
 
+VuePressからWordPressに移行しました｡
+
+以降の投稿は下記になります｡
+
+[Tech Tabiya](https://tech.tabiya.jp/)
+
 <!-- 
 # HomePages
 - [Tabiya Tech](https://tabiya.dev/)
