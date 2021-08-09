@@ -22,7 +22,7 @@ Nginx + Let’s Encrypt を使った SSL 証明証の更新手順です｡
 
 `certbot renew` を実行する事で更新が可能
 
-```sh
+```bash
 # certbot renew
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 

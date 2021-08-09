@@ -21,7 +21,7 @@ Fluetnd をセットアップしようとしたら､Rubyが入ってないぞ!!
 
 ## 2. rbenv のインストール
 
-```sh
+```bash
 # 依存ライブラリパッケージのインストール
 $ sudo yum -y install git gcc openssl-devel readline-devel zlib-devel
 
@@ -44,7 +44,7 @@ $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-docto
 
 ## 3. Ruby のインストール
 
-```sh
+```bash
 # インストールできるバージョンを確認
 $ rbenv install -l
 > 2.5.8

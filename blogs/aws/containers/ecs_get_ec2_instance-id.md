@@ -31,7 +31,7 @@ AWS CLI バージョン2が導入済み
 |ECS_SERVICE_NAME|サービス名前|
 |PROFILE|--profile あなたのプロファイル|
 
-```sh
+```bash
 #!/bin/bash
 export CLUSTER_NAME_OR_ARN="ECSのARN"
 export ECS_SERVICE_NAME="サービス名前"
@@ -66,7 +66,7 @@ done < ${FILS}
 
 ## 出力例
 
-```sh
+```bash
 サービス名
   ec2InstanceId: i-IDだよ
   ec2InstanceId: i-IDだよ

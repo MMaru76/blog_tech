@@ -10,7 +10,7 @@ categories:
   - Linux
 ---
 
-```sh
+```bash
 LIST_GROUP=./list.tmp
 I=0
 while IFS= read -r line

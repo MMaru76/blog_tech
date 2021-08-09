@@ -19,7 +19,7 @@ categories:
 
 ---
 
-```sh
+```bash
 $ less [file]
 ```
 
@@ -27,7 +27,7 @@ $ less [file]
 
 編集の時は、vi(vim) などを使う。`less` / `view` は閲覧のみ。
 
-```sh
+```bash
 $ grep [抽出] [file]
 ```
 
@@ -41,7 +41,7 @@ $ grep [抽出] [file]
 
 ### 3.1. 標準的な使い方
 
-```sh
+```bash
 [root@m ~]# less nginx.log
 
 # nginx -V >> nginx.log
@@ -82,7 +82,7 @@ nginx.log (END)
 - 行ごとに番号を付属して表示する場合
   - 最初の列 1から始まっている方が-N オプションの結果
 
-```sh
+```bash
 [root@m ~]# less -N nginx.log
 
       1 # nginx -V >> nginx.log
@@ -109,7 +109,7 @@ nginx.log (END)
 
 - 特定のキーワードだけを抽出して、lessする
 
-```sh
+```bash
 [root@m ~]# grep "nginx" nginx.log | less
 
 # nginx -V >> nginx.log
@@ -131,7 +131,7 @@ nginx version: nginx/1.18.0
 
 - 特定のキーワードだけを抽出して、lessに渡して番号を付ける
 
-```sh
+```bash
 [root@m ~]# grep "nginx" nginx.log | less -N
 
       1 # nginx -V >> nginx.log
@@ -154,7 +154,7 @@ nginx version: nginx/1.18.0
 - 抽出後の閲覧後のデータを保存する
   - nginx.logからnginxに該当するキーワードを抽出後に、less に渡してファイルを保存して閲覧
 
-```sh
+```bash
 [root@m ~]# grep "nginx" nginx.log | less -o test_op.log
 [root@m ~]# cat test_op.log
 # nginx -V >> nginx.log
@@ -174,7 +174,7 @@ nginx version: nginx/1.18.0
 - ファイルの全体の進行率
   - 左下に進行率を表示
 
-```sh
+```bash
 [root@m ~]# less -m ddagent-install.log
 
 ESC[34m
@@ -211,6 +211,6 @@ ddagent-install.log 30%
 - 連続した空白行を1つの空白行にまとめる
   - cat コマンドを参照
 
-```sh
+```bash
 less -s [ファイル]
 ```

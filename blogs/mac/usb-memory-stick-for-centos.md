@@ -21,7 +21,7 @@ categories:
 
 - name : USB01
 
-```sh
+```bash
 ▶ diskutil list
 
 /dev/disk0 (internal, physical):
@@ -54,7 +54,7 @@ Mac 標準機能のディスクユーティリティでもできますが､コ�
 - 形式 : MS-DOS
 - 名前 : USB001
 
-```sh
+```bash
 ▶ diskutil eraseDisk MS-DOS UBS001 /dev/disk2
 Started erase on disk2
 Unmounting disk
@@ -72,7 +72,7 @@ Finished erase on disk2
 
 USBメモリがマウントされていると､isoイメージを書き込めないので､アンマウントする｡
 
-```sh
+```bash
 ▶ diskutil unmountDisk /dev/disk2
 Unmount of all volumes on disk2 was successful
 ```
@@ -82,7 +82,7 @@ Unmount of all volumes on disk2 was successful
 - if : ソース
 - of : 焼く先
 
-```sh
+```bash
 ▶ sudo dd if=~/Downloads/CentOS-Stream-8-x86_64-20210416-boot.iso of=/dev/rdisk2 bs=1m
 Password:
 723+0 records in

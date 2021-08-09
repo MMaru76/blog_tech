@@ -10,7 +10,7 @@ categories:
   - Terraform
 ---
 
-## 1. IAM の作成
+## IAM の作成
 
 1. AWSコンソールアクセスして､IAMページに遷移
 2. 【ユーザー】を選択して､【ユーザーを作成】を選択
@@ -27,30 +27,29 @@ categories:
    - step4. 確認編
 [![Image from Gyazo](https://i.gyazo.com/46b2acd36f0cae899b3375c7929ca3e4.png)](https://gyazo.com/46b2acd36f0cae899b3375c7929ca3e4)
 
-::: tip ローカルで AWS CLI 2 のセットアップページ
-- [AWS CLI バージョン 2 セットアップ](https://tabiya.dev/blogs/aws/ec2/amazon-linux2-cli.html#aws-cli-2-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
-:::
+> ローカルで AWS CLI 2 のセットアップページ
+> - [AWS CLI バージョン 2 セットアップ](https://tabiya.dev/blogs/aws/ec2/amazon-linux2-cli.html#aws-cli-2-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
 
-## 2. 【direnv】セットアップ方法
+## 【direnv】セットアップ方法
 
 direnvとは?!
 > ディレクトリ毎に環境変数を定義して､そのディレクトリがカレントになった時だっけ環境変数を有効/無効にしてくれる素晴らしいツール
 
 [GitHub direnv](https://github.com/direnv/direnv)
 
-### 2.1. 【direnv】インストール
+### 【direnv】インストール
 
-```sh
+```bash
 $ brew install direnv
 ```
 
-### 2.2. 【direnv】シェルのフック設定
+### 【direnv】シェルのフック設定
 
-#### 2.2.1. zsh の場合
+#### zsh の場合
 
 - 下記の様に追記
 
-```sh
+```bash
 $ vim ~/.zshrc
 
 eval "$(direnv hook zsh)"
@@ -58,15 +57,15 @@ eval "$(direnv hook zsh)"
 
 - 反映
 
-```sh
+```bash
 source ~/.zshrc
 ```
 
-#### 2.2.2. bash の場合
+#### bash の場合
 
 - 下記の様に追記
 
-```sh
+```bash
 $ vim ~/.bashrc
 
 eval "$(direnv hook bash)"
@@ -74,23 +73,23 @@ eval "$(direnv hook bash)"
 
 - 反映
 
-```sh
+```bash
 source ~/.bashrc
 ```
 
-### 2.3. AWS プロファイル登録
+### AWS プロファイル登録
 
 - どのエディターで起動するかを指定
   - vim の所は任意
 
-```sh
+```bash
 $ export EDITOR=vim
 ```
 
 - `direnv edit .` を実行すると指定したエディターが立ち上がり､下記を追記
   - 自分のアクセス･シークレットキーを入力後に､実行させたいリージョンを指定
 
-```sh
+```bash
 $ direnv edit .
 
 export AWS_ACCESS_KEY_ID="自分のアクセスキーを入力"
@@ -98,39 +97,36 @@ export AWS_SECRET_ACCESS_KEY="自分のシークレットキーを入力"
 export AWS_REGION="リージョンの選択"
 ```
 
-::: tip 参考
+> 下記のような出力が出ますが､スルーして問題ない
+>
+> ```bash
+> direnv: loading ~/Documents/Terraform/.envrc
+> direnv: export +AWS_ACCESS_KEY_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY
+> ```
 
-下記のような出力が出ますが､スルーして問題ない
 
-```sh
-direnv: loading ~/Documents/Terraform/.envrc
-direnv: export +AWS_ACCESS_KEY_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY
-```
-
-:::
-
-### 2.4. エラーが発生する場合
+### エラーが発生する場合
 
 下記のようなエラーが発生する場合は､ `$ direnv allow` を実行
 
-```sh
+```bash
 direnv: error $HOME/Work_Dir/.envrc is blocked. Run `direnv allow` to approve its content 
 ```
 
 - `direnv allow` を実行して有効化
 
-```sh
+```bash
 $ direnv allow
 
 direnv: loading $HOME/Work_Dir/.envrc
 direnv: export +AWS_ACCESS_KEY_ID +AWS_REGION +AWS_SECRET_ACCESS_KEY
 ```
 
-## 3. Terraform の文法解説
+## Terraform の文法解説
 
 Terraform はHCLというHashicorm遠くじの言語を使用している｡また､HCLはJsonとの互換性がある｡
 
-### 3.1. 話し言葉で理解
+### 話し言葉で理解
 
 - resource : 作業したいモノを取り扱うことを示します
 - data : 情報を定義
@@ -141,7 +137,7 @@ Terraform はHCLというHashicorm遠くじの言語を使用している｡ま�
 }
 ```
 
-### 3.2. 公式の言語構成紹介
+### 公式の言語構成紹介
 
 ```hcl
 resource "aws_vpc" "main" {
@@ -154,7 +150,7 @@ resource "aws_vpc" "main" {
 }
 ```
 
-### 3.3. 【AWS VPC】例文
+### 【AWS VPC】例文
 
 ```hcl
 resource "aws_vpc" "my_vpc1" {
@@ -162,7 +158,7 @@ resource "aws_vpc" "my_vpc1" {
 }
 ```
 
-### 3.4. 【AWS IAM】例文
+### 【AWS IAM】例文
 
 ```hcl
 data "aws_iam_user" "my_user1" {

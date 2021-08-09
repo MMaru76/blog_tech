@@ -38,7 +38,7 @@ categories:
 
 SELinux と Firewall は無効にします(**必要な場合は､別途準備が必要です<作成中>**)｡
 
-```sh
+```bash
 sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config
 sudo systemctl stop firewalld ; sudo systemctl disable firewalld
 sudo reboot
@@ -64,7 +64,7 @@ sudo reboot
    - Git
 3. Docker インストールと起動
 
-```sh
+```bash
 sudo dnf -y upgrade; sudo dnf module -y install python38;sudo dnf install -y git
 sudo curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
 sudo sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
@@ -78,7 +78,7 @@ sudo systemctl enable --now docker
    - `docker-ce-20.10.2-3.el8.x86_64`
 2. Docker Login をセットアップ
 
-```sh
+```bash
 sudo rpm -q docker-ce
 sudo docker login
 ```
@@ -91,7 +91,7 @@ sudo docker login
 3. 一般ユーザーでも操作出来るように操作
    - ユーザー名 : ec2-user など
 
-```sh
+```bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod 755 /usr/local/bin/docker-compose
 docker-compose --version
@@ -103,7 +103,7 @@ sudo usermod -a -G docker ユーザー名
 1. docker-compose ファイルの作成
 2. ファイルを定義
 
-```sh
+```bash
 vim ~/valheim/docker-compose.yml
 ```
 
@@ -139,7 +139,7 @@ services:
 
 > 現時点の Tree 構造
 
-```sh
+```bash
 $ tree
 .
 └── docker-compose.yml
@@ -153,13 +153,13 @@ $ tree
 
 - 起動コマンド
 
-```sh
+```bash
 docker-compose -f /home/ユーザー名/valheim/docker-compose.yml up -d
 ```
 
 - 停止コマンド
 
-```sh
+```bash
 docker-compose -f /home/ユーザー名/valheim/docker-compose.yml down
 ```
 
@@ -251,6 +251,6 @@ $ tree
 
 一部のファイルが root 権限で削除する必要があります｡
 
-```sh
+```bash
 sudo rm -fr valheim_dh/
 ```

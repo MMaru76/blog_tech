@@ -15,7 +15,7 @@ categories:
 
 EC2のインスタンスに対してSSH接続してる最中に､パソコンの前から離れる事があると思いますが､例えばトイレから帰ってきたら･･･
 
-```sh
+```bash
 packet_write_wait: Connection to xxx.yyy.aaa.ooo port 22: Broken pipe
 ```
 
@@ -25,13 +25,13 @@ packet_write_wait: Connection to xxx.yyy.aaa.ooo port 22: Broken pipe
 
 お好みのエディタで ~/.ssh/config を作成または開く
 
-```sh
+```bash
 vim ~/.ssh/config
 ```
 
 下記の内容をそのまま記述
 
-```sh
+```bash
 Host *
   ServerAliveInterval 60
 ```

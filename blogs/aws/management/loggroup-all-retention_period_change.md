@@ -32,7 +32,7 @@ categories:
 - ファイルを作成
   - Retention_Period_Change.sh
 
-```sh
+```bash
 mkdir work
 cd ./work
 touch Retention_Period_Change.sh
@@ -42,7 +42,7 @@ touch Retention_Period_Change.sh
 
 好きなエディターで ```Retention_Period_Change.sh``` を編集
 
-```sh
+```bash
 #!/bin/bash
 
 # -------------------------------------------------------------------
@@ -80,7 +80,7 @@ done < ${LOGLIST}
 - sed で末尾の ",(ダブルクォートとカンマ) を削除
 - TESTlog.tmp に書き込み
 
-```sh
+```bash
 aws logs describe-log-groups --profile TEST | \
     grep "logGroupName" | \
     awk '{print substr($0, 30)}' | \
@@ -91,7 +91,7 @@ aws logs describe-log-groups --profile TEST | \
 
 開発/検証/本番環境で別ける時にご利用ください｡
 
-```sh
+```bash
 ## 保存期間/Shelf life
 TEST=1
 PRE=3

@@ -26,7 +26,7 @@ categories:
 
 - 全体での確認
 
-```sh
+```bash
 # amazon-linux-extras
   0  ansible2                 available    \
         [ =2.4.2  =2.4.6  =2.8  =stable ]
@@ -39,14 +39,14 @@ categories:
 
 - 特定のパッケージが存在するか確認
 
-```sh
+```bash
 # amazon-linux-extras | grep "nginx"
  38  nginx1                   available    [ =stable ]
 ```
 
 ## 1.2. Nginx をインストール
 
-```sh
+```bash
 # amazon-linux-extras install nginx1
 ================================================================================
  Package                    Arch   Version              Repository         Size
@@ -94,13 +94,13 @@ Complete!
 
 ## 1.3. Nginx 起動
 
-```sh
+```bash
 # systemctl start nginx
 ```
 
 ## 1.4. Nginx 起動確認
 
-```sh
+```bash
 # systemctl status nginx
 ● nginx.service - The nginx HTTP and reverse proxy server
    Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
@@ -123,14 +123,14 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 ## 1.5. Nginx 自動起動
 
-```sh
+```bash
 # systemctl enable nginx
 Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service to /usr/lib/systemd/system/nginx.service.
 ```
 
 ## 1.6. Nginx 自動起動確認
 
-```sh
+```bash
 # systemctl list-unit-files  -t service | grep "nginx"
 nginx.service                                 enabled
 ```

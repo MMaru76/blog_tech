@@ -16,7 +16,7 @@ Docker Hub のサイト : [https://hub.docker.com/](https://hub.docker.com/)
 
 - ログイン
 
-```sh
+```bash
 $ docker login
 => Username : ユーザー名入力
 => Passowrd : パスワード入力
@@ -25,13 +25,13 @@ $ docker login
 
 - ログアウト
 
-```sh
+```bash
 $ docker logout
 ```
 
 - イメージのタグを付け替え
 
-```sh
+```bash
 $ docker image tag sample-image:0.1 DOCKERHUB_USER/sample-image:0.1
 ```
 
@@ -47,13 +47,13 @@ DOCKERHUB_USER/sample-image:0.1
 
 - イメージをプッシュ
 
-```sh
+```bash
 $ docker image push DOCKERHUB_USER/sample-image:0.1
 ```
 
 - 直接プッシュ出来る名前を付けてビルド
 
-```sh
+```bash
 $ docker image build -t DOCKERHUB_USER/sample-image:0.1
 ```
 
@@ -71,7 +71,7 @@ $ docker image build -t DOCKERHUB_USER/sample-image:0.1
 |CREATED|作成日|
 |SIZE|イメージのサイズ|
 
-```sh
+```bash
 $ docker image ls
 ```
 > 以前のコマンド `$ docker images`
@@ -85,7 +85,7 @@ $ docker image ls
     - レジストリ名 【saple-image】
     - タグを 【0.1】
 
-```sh
+```bash
 $ docker image build -t sample-image1:0.1 .
 ```
 
@@ -94,7 +94,7 @@ $ docker image build -t sample-image1:0.1 .
     - レジストリ名 【saple-image】
     - タグを 【0.2】
 
-```sh
+```bash
 $ docker image build -t sample-image:0.2 -f Dockerfile-sample2 .
 ```
 ---
@@ -103,6 +103,6 @@ $ docker image build -t sample-image:0.2 -f Dockerfile-sample2 .
 
 - localhost:12345 宛のポートを 8080/TCP ポートに転送
 
-```sh
+```bash
 $ docker container run -d -p 12345:8080 sample-image:0.1
 ```

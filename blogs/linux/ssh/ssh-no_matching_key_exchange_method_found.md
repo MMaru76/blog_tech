@@ -25,7 +25,7 @@ Mac でssh接続をした時 no matching key exchange method found. Their offer 
 
 ## エラー内容
 
-```sh
+```bash
 $ ssh ユーザ名@IPアドレス
 
 Unable to negotiate with (IPアドレス) port 22: 
@@ -37,7 +37,7 @@ Their offer: diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
 
 ```~/.ssh/config``` ファイルを開いて3行目~5行目を追加
 
-```sh{3,4,5}
+```bash{3,4,5}
 $ vim ~/.ssh/config
 
 Host *
@@ -49,13 +49,13 @@ KexAlgorithms +diffie-hellman-group1-sha1
 
 新規で作成する場合はPermissionを設定する必要がある
 
-```sh
+```bash
 $ chmod 600 ~/.ssh/config
 ```
 
 ### 権限などの確認
 
-```sh
+```bash
 $ ls -al ~/.ssh/config
 -rw------- 1 ユーザー名 グループ名 58 May 30 22:16 /home/ユーザー名/.ssh/config
 ```
@@ -64,7 +64,7 @@ $ ls -al ~/.ssh/config
 
 設定とPermissionの操作が出来たら再度接続確認をしてみると､接続できるかと思います｡
 
-```sh
+```bash
 $ ssh ユーザ名@IPアドレス
 
 The authenticity of host 'IPアドレス' can't be established.

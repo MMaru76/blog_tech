@@ -47,7 +47,7 @@ categories:
 
 #### 2.2.1. 関連パッケージインストール
 
-```sh
+```bash
 # yum -y install git gcc pcre-devel openssl-devel
 ```
 
@@ -55,7 +55,7 @@ categories:
 
 - 今回は､**/root/works** になります｡
 
-```sh
+```bash
 # mkdir works
 ```
 
@@ -63,7 +63,7 @@ categories:
 
 [こちら](https://nginx.org/en/download.html)で環境に合ったバージョンをダウンロード
 
-```sh
+```bash
 # cd ~/works/
 # wget https://nginx.org/download/nginx-1.14.0.tar.gz
 # tar zxvf nginx-1.14.0.tar.gz
@@ -75,7 +75,7 @@ categories:
 
 - MPEG-DASHとHLS対応のモジュールをクローン
 
-```sh
+```bash
 # cd nginx-1.14.0/
 # git clone https://github.com/arut/nginx-rtmp-module.git
 # ./configure --add-module=nginx-rtmp-module/
@@ -92,7 +92,7 @@ categories:
 
 HLS･MPEG-DASH･FLVを何処に出力するかを指定
 
-```sh
+```bash
 # vi /usr/local/nginx/conf/nginx.conf
 ```
 
@@ -162,7 +162,7 @@ http {
 
 - ディレクトリを作成後にユーザーとグループを**nobody**に変更
 
-```sh
+```bash
 # mkdir -p /var/www/html/flv
 # chown nobody. /var/www/html/flv
 ```
@@ -171,7 +171,7 @@ http {
 
 もしOKと表示されていない場合は､記述ミスか､手順ミスのどちらかになります｡
 
-```sh
+```bash
 # /usr/local/nginx/sbin/nginx -t
 
 nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
@@ -180,7 +180,7 @@ nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
 
 #### 2.3.4. サービス起動のスクリプトを作成
 
-```sh
+```bash
 # vi /usr/lib/systemd/system/live_nginx.service
 ```
 
@@ -204,13 +204,13 @@ WantedBy=multi-user.target
 
 - 起動
 
-```sh
+```bash
 # systemctl start live_nginx.service
 ```
 
 - 自動起動
 
-```sh
+```bash
 # systemctl enable live_nginx.service
 
 Created symlink from /etc/systemd/system/multi-user.target.wants/live_nginx.service to /usr/lib/systemd/system/live_nginx.service.
@@ -235,7 +235,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/live_nginx.serv
 
 **player.setSrc("hls/obs_test.m3u8");** の、**hls/obs_test** を自分の配信環境に合わせる
 
-```sh
+```bash
 # vi /usr/local/nginx/html/hp_hls.html
 ```
 
@@ -283,7 +283,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/live_nginx.serv
 
 **player.setSrc("dash/obs_test.mpd");** の、**dash/obs_test** を自分の配信環境に合わせる
 
-```sh
+```bash
 # vi /usr/local/nginx/html/hp_dash.html
 ```
 
@@ -376,7 +376,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/live_nginx.serv
 
 > <http://global-IP/hp_hls.html>
 
-```sh
+```bash
 # ll /var/www/html/hls/
 
 total 10160
@@ -394,7 +394,7 @@ total 10160
 
 > <http://global-IP/hp_dash.html>
 
-```sh
+```bash
 # ll /var/www/html/dash/
 
 -rw-r--r-- 1 nobody nobody 3081483 Aug  7 01:09 obs_test-81999.m4v
@@ -413,7 +413,7 @@ total 10160
 
 こちらは、次回使用します。
 
-```sh
+```bash
 # ll flv/
 total 86852
 -rw-r--r-- 1 nobody nobody 32139979 Aug  7 01:09 obs_test-1533604079.flv

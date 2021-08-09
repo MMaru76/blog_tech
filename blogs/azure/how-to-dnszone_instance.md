@@ -169,7 +169,7 @@ categories:
 
 1. Webサーバをインストールまでの作業
 
-```sh
+```bash
 $ sudo su -
 # apt -y install apache2
 # systemctl start apache2

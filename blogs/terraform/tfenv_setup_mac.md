@@ -9,13 +9,13 @@ tags:
 categories:
   - Terraform
 ---
-## 1. はじめに
+## はじめに
 
 改めて Terraform を勉強しようと思い【[はじめての人のための Terraform for AWS](https://amzn.to/327bVly)】を購入してしまいました！
 
 Terraform を Mac に入れる時と躓いた時に見るページ
 
-## 2. 環境
+## 環境
 
 - まるちゃんの実行環境
 
@@ -34,33 +34,33 @@ Terraform を Mac に入れる時と躓いた時に見るページ
 |#(シャープ)|rootユーザー|
 |----<br>\~略\~<br>----|長文の実行結果や編集内容など|
 
-## 3. 【tfenv】セットアップ方法
+## 【tfenv】セットアップ方法
 
 [GitHub : tfenv](https://github.com/tfutils/tfenv)
 
-### 3.1. 【tfenv】インストール手順
+### 【tfenv】インストール手順
 
-```sh
+```bash
 $ brew update
 $ brew install tfenv
 ```
 
-### 3.2. 【tfenv】アンインストール手順
+### 【tfenv】アンインストール手順
 
-```sh
+```bash
 $ brew uninstall terraform
 ```
 
-### 3.3. 【tfenv】バージョン確認
+### 【tfenv】バージョン確認
 
-```sh
+```bash
 $ tfenv --version
 $ tfenv 2.0.0
 ```
 
-### 3.4. 【tfenv】コマンドリスト
+### 【tfenv】コマンドリスト
 
-```sh
+```bash
 $ tfenv --help
 
 Usage: tfenv <command> [<options>]
@@ -73,13 +73,13 @@ Commands:
    list-remote   List all installable versions
 ```
 
-## 4. 【Terraform】 セットアップ方法
+## 【Terraform】 セットアップ方法
 
-### 4.1. 【Terraform】インストール可能なバージョンをリスト表示
+### 【Terraform】インストール可能なバージョンをリスト表示
 
 - 現在インストール可能なバージョン一覧を最新 10 個を表示
 
-```sh
+```bash
 $ tfenv list-remote | head
 
 0.13.0
@@ -96,7 +96,7 @@ $ tfenv list-remote | head
 
 - 現在インストール可能な全バージョンを表示
 
-```sh
+```bash
 $ tfenv list-remote
 
 0.13.0
@@ -106,11 +106,11 @@ $ tfenv list-remote
 0.1.0
 ```
 
-### 4.2. 【Terraform】バージョン指定のインストール手順
+### 【Terraform】バージョン指定のインストール手順
 
 > 例 : バージョン 0.13.0 をインストール
 
-```sh
+```bash
 $ tfenv install 0.13.0
 
 Installing Terraform v0.13.0
@@ -119,45 +119,45 @@ Downloading release tarball from
 run 'tfenv use 0.13.0'
 ```
 
-### 4.3. 【Terraform】利用可能なバージョンをリスト表示
+### 【Terraform】利用可能なバージョンをリスト表示
 
-```sh
+```bash
 $ tfenv list
 * 0.13.0 (set by /usr/local/Cellar/tfenv/2.0.0/version)
   0.12.25
 ```
 
-### 4.4. 【Terraform】バージョンの切り替え手順
+### 【Terraform】バージョンの切り替え手順
 
-```sh
+```bash
 $ tfenv use 0.13.0
 
 Switching default version to v0.13.0
 Switching completed
 ```
 
-### 4.5. 【Terraform】バージョン確認
+### 【Terraform】バージョン確認
 
-```sh
+```bash
 $ terraform --version
 
 Terraform v0.13.0
 ```
 
-### 4.6. 【Terraform】バージョン指定のアンインストール手順
+### 【Terraform】バージョン指定のアンインストール手順
 
-```sh
+```bash
 $ tfenv uninstall 0.12.25
 
 Uninstall Terraform v0.12.25
 Terraform v0.12.25 is successfully uninstalled
 ```
 
-### 4.7. 【Terraform】タブ補完設定
+### 【Terraform】タブ補完設定
 
 - 補完機能をインストール
 
-```sh
+```bash
 $ terraform -install-autocomplete
 ```
 
@@ -165,7 +165,7 @@ $ terraform -install-autocomplete
   - zsh : ~/.zshrc
   - bash : ~/.bashrc
 
-```sh
+```bash
 cat ~/.zshrc
 
 ~~略~~
@@ -173,15 +173,15 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/Cellar/tfenv/2.0.0/versions/0.13.0/terraform terraform
 ```
 
-## 5. Error List
+## Error List
 
-### 5.1. スイッチ漏れ
+### スイッチ漏れ
 
 デフォルトから切り替え漏れの際に発生する場合あり｡
 
 > 参考 : [tfenv listで "Version could not be resolved" が発生する](https://qiita.com/takkii1010/items/6910da995b6c21ac6b3a)
 
-```sh
+```bash
 $ tfenv list
 
 cat: /usr/local/Cellar/tfenv/2.0.0/version: No such file or directory
@@ -191,6 +191,6 @@ tfenv-version-name failed
 
 - 対策としては､`tfenv use バージョン` を実行
 
-```sh
+```bash
 $ tfenv use 0.13.0
 ```

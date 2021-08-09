@@ -32,7 +32,7 @@ categories:
 
 終了保護が有効なインスタンスを CLI で削除をしようとすると下記のエラーが表示されます｡
 
-```sh
+```bash
 ▶ aws ec2 terminate-instances --instance-ids i-0e4167cd354860fbd
 
 An error occurred (OperationNotPermitted) when calling the TerminateInstances operation: \

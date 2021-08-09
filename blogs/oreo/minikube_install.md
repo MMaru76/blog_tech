@@ -14,7 +14,7 @@ date: 2020-07-29
 
 ## 簡単セットアップ
 
-```sh
+```bash
 $ brew update
 $ brew install hyperkit
 $ brew install minikube

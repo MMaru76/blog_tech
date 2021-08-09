@@ -11,11 +11,11 @@ categories:
   - Terraform
 ---
 
-## 1. VPC を参考にコマンド解説
+## VPC を参考にコマンド解説
 
 [GitHub : maruchan76/tabiya_terraform](https://github.com/maruchan76/tabiya_terraform/blob/master/tabiya_tech/vpc.tf)
 
-### 1.1. サンプル文
+### サンプル文
 
 - `touch vpc.tf` で下記をペースト
 
@@ -36,11 +36,11 @@ resource "aws_vpc" "tabiya_vpc" {
 }
 ```
 
-### 1.2. 【init】事前準備
+### 【init】事前準備
 
 - `init` コマンドで､カレントディレクトリ内で Terraform を実行出来るようにする｡
 
-```sh
+```bash
 $ terrform init
 
 Initializing the backend...
@@ -76,12 +76,12 @@ commands will detect it and remind you to do so if necessary.
 - 実行後
   - [![Image from Gyazo](https://i.gyazo.com/796e0359b0ec5eb4eab77a7abc570876.png)](https://gyazo.com/796e0359b0ec5eb4eab77a7abc570876)
 
-### 1.3. 【plan】ソースコードの動作確認
+### 【plan】ソースコードの動作確認
 
 - `plan` コマンドで､実行内容を事前に確認する事が出来る｡
   - コードの実行テストを必ず実行しましょう｡
 
-```sh
+```bash
 $ terraform plan
 
 Refreshing Terraform state in-memory prior to plan...
@@ -131,16 +131,14 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-### 1.4. 【apply】実行
+### 【apply】実行
 
-::: tip
-必ず `terraform plan` を実行しよう
-:::
+> 必ず `terraform plan` を実行しよう
 
 - `apply` コマンドで､ソースコードに記述した内容通りに実行をしてくれる｡
   - 途中で【Enter a value】と対話を求められますが､【yes】と入力して構築を開始してくれる｡
 
-```sh
+```bash
 $ terraform apply
 
 An execution plan has been generated and is shown below.
@@ -192,21 +190,21 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 [![Image from Gyazo](https://i.gyazo.com/57cf86a6aca8122bd05926e25f86581a.png)](https://gyazo.com/57cf86a6aca8122bd05926e25f86581a)
 
-### 1.5. 【state list】リソース名の一覧確認
+### 【state list】リソース名の一覧確認
 
 - `state list` コマンドで構築したリソース名の確認出来る｡
 
-```sh
+```bash
 $ terraform state list
 
 aws_vpc.tabiya_vpc
 ```
 
-### 1.6. 【state show】リソースの設定値確認
+### 【state show】リソースの設定値確認
 
 - `state show リソース名` コマンドで該当リソースの設定値を確認出来る｡
 
-```sh
+```bash
 $ terraform state show aws_vpc.tabiya_vpc
 
 # aws_vpc.tabiya_vpc:
@@ -233,11 +231,11 @@ resource "aws_vpc" "tabiya_vpc" {
 }
 ```
 
-### 1.7. 【plan -destroy】削除対象一覧の確認
+### 【plan -destroy】削除対象一覧の確認
 
 - `plan -destroy` コマンドで削除対象を確認出来る｡
 
-```sh
+```bash
 $ terraform plan -destroy
 
 Refreshing Terraform state in-memory prior to plan...
@@ -286,12 +284,12 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-### 1.8. 【destroy】リソースの削除
+### 【destroy】リソースの削除
 
 - `destory` コマンドで作成したリソースの削除が出来る｡
   - 途中で【Enter a value】と対話を求められますが､【yes】と入力して削除を開始してくれる｡
 
-```sh
+```bash
 aws_vpc.tabiya_vpc: Refreshing state... [id=vpc-]
 
 An execution plan has been generated and is shown below.
@@ -339,9 +337,9 @@ Destroy complete! Resources: 1 destroyed.
 
 【Destroy complete! Resources: 1 destroyed.】と表示されたら､実際にAWSコンソール側にて確認すると､リソースが無くなっていることが確認できます｡
 
-### 1.9. 【-target】特定のリソースだけを操作
+### 【-target】特定のリソースだけを操作
 
-```sh
+```bash
 $ terraform plan -target=aws_vpc.tabiya_vpc
 $ terraform apply -target=aws_vpc.tabiya_vpc
 $ terraform state list

@@ -106,13 +106,13 @@ EFS自体は､2015年4月からありました･･･が､今までは東京
 
 #### 4.1.1. EFSマウントヘルパーのインストール
 
-```sh
+```bash
 # yum install -y amazon-efs-utils
 ```
 
 #### 4.1.2. ターゲットにしたいディレクトリを作成
 
-```sh
+```bash
 # mkdir /mnt/efs
 ```
 
@@ -120,19 +120,19 @@ EFS自体は､2015年4月からありました･･･が､今までは東京
 
 - EFSマウントヘルパーの使用
 
-```sh
+```bash
 # mount -t efs fs-1234567:/ /mnt/efs
 ```
 
 - 暗号化の場合
 
-```sh
+```bash
 # mount -t efs -o tls fs-1234567:/ /mnt/efs
 ```
 
 - NFSクライアントの使用の場合
 
-```sh
+```bash
 # mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-1234567.efs.ap-northeast-1.amazonaws.com:/ /mnt/efs
 ```
 
@@ -140,7 +140,7 @@ EFS自体は､2015年4月からありました･･･が､今までは東京
 
 お好みのエディターで下記の内容を追加
 
-```sh
+```bash
 # vim /etc/fstab
 
 fs-1234567:/   /mnt/efs       efs     defaults,_netdev        0       0

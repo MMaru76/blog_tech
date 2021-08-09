@@ -33,7 +33,7 @@ categories:
 
 SELinux と Firewall は無効にします(**必要な場合は､別途準備が必要です<作成中>**)｡
 
-```sh
+```bash
 sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config
 sudo systemctl stop firewalld ; sudo systemctl disable firewalld
 sudo reboot
@@ -60,7 +60,7 @@ sudo reboot
    - Nginx
 3. Docker インストールと起動
 
-```sh
+```bash
 sudo dnf -y upgrade; sudo dnf module -y install python38;sudo dnf install -y nginx git
 sudo curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
 sudo sed -i -e "s/enabled=1/enabled=0/g" /etc/yum.repos.d/docker-ce.repo
@@ -74,7 +74,7 @@ sudo systemctl enable --now docker
    - `docker-ce-20.10.2-3.el8.x86_64`
 2. Docker Login をセットアップ
 
-```sh
+```bash
 sudo rpm -q docker-ce
 sudo docker login
 ```
@@ -87,7 +87,7 @@ sudo docker login
 3. 一般ユーザーでも操作出来るように操作
    - ユーザー名 : ec2-user など
 
-```sh
+```bash
 sudo curl -L https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod 755 /usr/local/bin/docker-compose
 docker-compose --version
@@ -100,7 +100,7 @@ sudo usermod -a -G docker ユーザー名
 2. index.html ファイルを適当な場所に設置
 3. 証明書を取得
 
-```sh
+```bash
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo mkdir -p /var/www/html
 sudo vim /var/www/html/index.html
@@ -112,7 +112,7 @@ sudo certbot certonly --webroot -w /var/www/html -d 任意のドメイン
 1. docker-compose ファイルの作成
 2. ファイルを定義
 
-```sh
+```bash
 vim ~/minecraft/docker-compose.yml
 ```
 
@@ -157,13 +157,13 @@ services:
 
 - 起動コマンド
 
-```sh
+```bash
 docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml up -d
 ```
 
 - 停止コマンド
 
-```sh
+```bash
 docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml down
 ```
 
@@ -177,7 +177,7 @@ docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml down
 
 - 作業とバックアップディレクトリを作成
 
-```sh
+```bash
 mkdir ~/work ~/be_minecraft
 ```
 
@@ -185,7 +185,7 @@ mkdir ~/work ~/be_minecraft
   - `vim ~/work/minecraft_start.sh`
   - (使っていない)
 
-```sh
+```bash
 #!/bin/bash
 docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml up -d
 ```
@@ -194,7 +194,7 @@ docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml up -d
   - `vim ~/work/minecraft_stop.sh`
   - (使っていない)
 
-```sh
+```bash
 #!/bin/bash
 docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml down
 ```
@@ -202,7 +202,7 @@ docker-compose -f /home/ユーザー名/minecraft/docker-compose.yml down
 - バックアップスクリプトの準備
   - `vim ~/work/minecraft_bc.sh`
 
-```sh
+```bash
 #!/bin/bash
 tar cvzf /home/ユーザー名/be_minecraft/vanilla_`date "+%Y%m%d_%H%M%S"`.tar.gz /home/ユーザー名/minecraft/vol01/
 ```
@@ -210,7 +210,7 @@ tar cvzf /home/ユーザー名/be_minecraft/vanilla_`date "+%Y%m%d_%H%M%S"`.tar.
 - ログの削除スクリプトの準備
   - `vim ~/work/minecraft_log_del.sh`
 
-```sh
+```bash
 #!/bin/bash
 rm -fr /home/ユーザー名/minecraft/vol01/logs/*
 ```
@@ -222,7 +222,7 @@ rm -fr /home/ユーザー名/minecraft/vol01/logs/*
     - 00:08/12:08 : ログファイルの削除
     - 00:10/12:10 : サーバー起動
 
-```sh
+```bash
 crontab -e
 
 =========================================

@@ -50,7 +50,7 @@ Lambdaには様々な制限があり、Lambdaのコードストレージの上�
 - `seq 1 10` の所に始まりの数と終了の数
   - Latest を *11* だとした際に *1* ~ *10* まで消すときは､`seq 1 10` と指定
 
-```sh
+[bash]
 LAMBDA_FUNC_NAME='関数名'
 PROFILE=プロファイル名
 
@@ -62,4 +62,4 @@ do
       --qualifier $job_name \
       --profile $PROFILE
 done
-```
+[/bash]

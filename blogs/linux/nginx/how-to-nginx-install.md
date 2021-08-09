@@ -7,25 +7,19 @@ tags:
   - CentOS 7
 categories:
   - Linux
----
 
-## 1. はじめに
 
----
+## はじめに
 
 対象環境は `CentOS 7` です｡
 
-## 2. 初期設定など
+## 初期設定など
 
----
-
-### 2.1. セキュリティグループ 外し
-
----
+### セキュリティグループ 外し
 
 CentOS 7 で実施している場合は下記を実施
 
-```sh
+```bash
 //ファイアーウォールの停止/自動停止
 # systemctl stop firewalld ; systemctl disable firewalld
 
@@ -36,26 +30,22 @@ CentOS 7 で実施している場合は下記を実施
 # yum -y update ; yum -y groupinstall base ; reboot
 ```
 
-### 2.2. Nginx サーバーの設定など
-
----
+### Nginx サーバーの設定など
 
 設定に異常が無いか確認する際は､下記のコマンドを実行
 
-```sh
+```bash
 # nginx -t
 
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-### 2.3. リポジトリ情報の設定
-
----
+### リポジトリ情報の設定
 
 CentOS 7では､公式のyumリポジトリにnginxが無いため､ [nginx 公式](http://nginx.org/en/linux_packages.html)が用意しているリポジトリを追加します｡
 
-```sh
+```bash
 # vim /etc/yum.repos.d/nginx.repo
 
 [nginx]
@@ -65,15 +55,11 @@ gpgcheck=0
 enabled=1
 ```
 
-## 3. インストール編
+## インストール編
 
----
+### Nginx をインストール可能か確認
 
-### 3.1. Nginx をインストール可能か確認
-
----
-
-```sh
+```bash
 # yum info nginx
 
 読み込んだプラグイン:fastestmirror, langpacks
@@ -98,11 +84,9 @@ URL             : http://nginx.org/
                 : a mail proxy server.
 ```
 
-### 3.2. Nginx のインストール
+### Nginx のインストール
 
----
-
-```sh
+```bash
 // Nginx のインストール
 # yum -y install nginx
 
@@ -114,15 +98,11 @@ URL             : http://nginx.org/
 nginx version: nginx/1.17.3
 ```
 
-## 4. 80 番ポートアクセス確認編
+## 80 番ポートアクセス確認編
 
----
+### 80番ポートでアクセスする先の作成
 
-### 4.1. 80番ポートでアクセスする先の作成
-
----
-
-```sh
+```bash
 // ディレクトリの作成
 # mkdir /usr/share/nginx/html/test80
 
@@ -140,11 +120,9 @@ nginx version: nginx/1.17.3
 </html>
 ```
 
-### 4.2. サーバーネーム の変更
+### サーバーネーム の変更
 
----
-
-```sh
+```bash
 # vim /etc/nginx/conf.d/default.conf
 ```
 
@@ -165,11 +143,9 @@ server {
 }
 ```
 
-### 4.3. Nginx 再起動
+### Nginx 再起動
 
----
-
-```sh
+```bash
 // エラーが無いかを確認
 # nginx -t
 
@@ -177,9 +153,7 @@ server {
 # systemctl restart nginx
 ```
 
-### 4.4. ブラウザーからサーバーにアクセス
-
----
+### ブラウザーからサーバーにアクセス
 
 [![Image from Gyazo](https://i.gyazo.com/f674a5445dbe0977c071ab3e83cc52c0.png)](https://gyazo.com/f674a5445dbe0977c071ab3e83cc52c0)
 
@@ -193,8 +167,6 @@ server {
 
 :::
 
-## 5. HTTPS の仕方
-
----
+## HTTPS の仕方
 
 [【Linux】 CentOS7 + Nginx + Let’s Encrypt](https://tabiya.dev/blogs/linux/nginx/how-to-lets-encrypt.html)

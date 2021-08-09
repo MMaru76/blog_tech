@@ -10,9 +10,7 @@ categories:
   - Linux
 ---
 
-## 1. はじめに
-
----
+## はじめに
 
 対象環境は `CentOS 7` です｡
 
@@ -20,47 +18,37 @@ categories:
 
 - [【Linux】 CentOS7 + Nginx Install](https://tabiya.dev/blogs/linux/nginx/how-to-nginx-install.html)
 
-## 2. Let’s Encrypt の導入方法
-
----
+## Let’s Encrypt の導入方法
 
 作業自体は､すべて root ユーザー で作業しています｡
 
-### 2.1. EPEL リポジトリのインストール
+### EPEL リポジトリのインストール
 
----
-
-```sh
+```bash
 # yum -y install epel-release
 ```
 
-### 2.2. Let’s Encrypt クライアント ｢certbot｣ をインストール
+### Let’s Encrypt クライアント ｢certbot｣ をインストール
 
----
-
-```sh
+```bash
 # yum -y install certbot python2-certbot-nginx
 
 // search を使うとインストール可能なパッケージ一覧が表示されます｡
 # yum search certbot
 ```
 
-### 2.3. certbot実行時にnginxの再起動を実行
+### certbot実行時にnginxの再起動を実行
 
----
-
-```sh
+```bash
 sed -i /etc/sysconfig/certbot \
 -e "/^PRE_HOOK/ s/\"\"/\"--pre-hook 'systemctl stop nginx'\"/" \
 -e "/^POST_HOOK/ s/\"\"/\"--post-hook 'systemctl restart nginx'\"/" \
 -e "/^RENEW_HOOK/ s/\"\"/\"--renew-hook 'systemctl restart nginx'\"/"
 ```
 
-### 2.4. certbot コマンドで証明書の取得
+### certbot コマンドで証明書の取得
 
----
-
-```sh
+```bash
 # certbot certonly --webroot \
 -w /usr/share/nginx/html/test80 \
 -d www.example.com \
@@ -68,27 +56,21 @@ sed -i /etc/sysconfig/certbot \
 --agree-tos -n
 ```
 
-### 2.5. 証明書が保存されている場所について
+### 証明書が保存されている場所について
 
----
-
-```sh
+```bash
 # ls -a /etc/letsencrypt/live/www.example.com/
 
 .  ..  README  cert.pem  chain.pem  fullchain.pem  privkey.pem
 ```
 
-## 3. HTTPS の設定
-
----
+## HTTPS の設定
 
 HTTPS でアクセス出来るように設定をしています｡
 
-### 3.1. 443 番ポートでアクセスする先の作成
+### 443 番ポートでアクセスする先の作成
 
----
-
-```sh
+```bash
 // ディレクトリの作成
 # mkdir /usr/share/nginx/html/test443
 
@@ -106,11 +88,9 @@ HTTPS でアクセス出来るように設定をしています｡
 </html>
 ```
 
-### 3.2. 鍵 の場所指定など
+### 鍵 の場所指定など
 
----
-
-```sh
+```bash
 // sample_ssl じゃなくても大丈夫
 # vim /etc/nginx/conf.d/sample_ssl.conf
 ```
@@ -125,15 +105,13 @@ server {
 }
 ```
 
-### 3.3. HTTP アクセスを HTTPS リダイレクトへ
-
----
+### HTTP アクセスを HTTPS リダイレクトへ
 
 こちらの記述は自由です｡
 
 server 内に｢`return 301 https://$host$request_uri;`｣を記述するだけです｡
 
-```sh
+```bash
 # vim /etc/nginx/conf.d/default.conf
 ```
 
@@ -156,13 +134,11 @@ server {
 }
 ```
 
-### 3.4. Nginx の再起動または再読み込み
-
----
+### Nginx の再起動または再読み込み
 
 環境に合わせて実行
 
-```sh
+```bash
 // 再起動 : stop => start
 # systemctl restart nginx
 
@@ -170,9 +146,7 @@ server {
 # systemctl reload nginx
 ```
 
-### 3.5. ブラウザーからサーバーにアクセス
-
----
+### ブラウザーからサーバーにアクセス
 
 [![Image from Gyazo](https://i.gyazo.com/9cf90db7a63175a5ca6cfd15fabea34c.png)](https://gyazo.com/9cf90db7a63175a5ca6cfd15fabea34c)
 

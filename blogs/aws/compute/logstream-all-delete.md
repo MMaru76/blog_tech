@@ -31,7 +31,7 @@ categories:
 
 ### パッケージ更新
 
-```sh
+```bash
 $ sudo yum -y update
 $ sudo reboot
 ```
@@ -65,7 +65,7 @@ Default output format [None]: yaml          <- json/yaml を入力
     - logs_stream_name.tmp
         - ログストリーム
 
-```sh
+```bash
 $ mkdir /home/ec2-user/work
 $ cd /home/ec2-user/work
 $ touch delete-log-test.sh {log_group_name,logs_stream_name}.tmp
@@ -75,7 +75,7 @@ $ touch delete-log-test.sh {log_group_name,logs_stream_name}.tmp
 
 好きなエディターで ```delete-log-test.sh``` を編集
 
-```sh
+```bash
 #!/bin/bash
 LOG_GROUP_NAME=log_group_name.tmp
 LOG_STREAM_NAME=logs_stream_name.tmp
@@ -133,7 +133,7 @@ EC2 のデフォルトTimeZoneは *UTC* なので注意
 
 - cron を編集する為の専用コマンド
 
-```shll
+```bashll
 $ crontab -e
 ```
 
@@ -148,12 +148,12 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:"
 
 - 起動ログ等を確認する場合
 
-```sh
+```bash
 $ sudo tail -F /var/log/cron
 ```
 
 - 実行ログを確認する場合
 
-```sh
+```bash
 $ tail -F /var/spool/mail/ec2-user
 ```

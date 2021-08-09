@@ -14,7 +14,6 @@ categories:
 
 LEMP を使った WordPress の簡単な構築手順
 
-
 ## 用語解説
 
 |項目|説明|備考|
@@ -29,13 +28,13 @@ LEMP を使った WordPress の簡単な構築手順
 
 ### パッケージ更新
 
-```sh
+```bash
 $ sudo yum -y update
 ```
 
 ### TimeZone の変更と反映
 
-```sh
+```bash
 $ date
 => UTC
 $ sudo timedatectl set-timezone Asia/Tokyo
@@ -48,14 +47,14 @@ $ date
 
 ### 導入パッケージの確認
 
-```sh
+```bash
 $ amazon-linux-extras list | grep nginx
 $ amazon-linux-extras list | grep php
 ```
 
 ### 各種パッケージのインストール
 
-```sh
+```bash
 $ sudo amazon-linux-extras install nginx1
 $ sudo amazon-linux-extras install php7.4
 $ sudo yum install mariadb-server
@@ -65,21 +64,21 @@ $ sudo yum install mariadb-server
 
 - nginx
 
-```sh
+```bash
 $ nginx -v
 => nginx version: nginx/1.16.1
 ```
 
 - php
 
-```sh
+```bash
 $ php-fpm -v
 => PHP 7.4.5 (fpm-fcgi) (built: Apr 23 2020 00:11:38)
 ```
 
 - mysql
 
-```sh
+```bash
 $ mysql --version
 => mysql  Ver 15.1 Distrib 5.5.64-MariaDB, for Linux (x86_64) using readline 5.1
 ```
@@ -87,21 +86,21 @@ $ mysql --version
 ### 各種サービスの起動&自動起動有効化
 
 - nginx
-```sh
+```bash
 $ sudo systemctl start nginx
 $ sudo systemctl enable nginx
 ```
 
 - php
 
-```sh
+```bash
 $ sudo systemctl start php-fpm
 $ sudo systemctl enable php-fpm
 ```
 
 - mysql
 
-```sh
+```bash
 $ sudo systemctl start mariadb
 $ sudo systemctl enable mariadb
 ```
@@ -113,7 +112,7 @@ $ sudo systemctl enable mariadb
 - データベースのパスワード設定などの設定
 - データベース内に接続
 
-```sh
+```bash
 $ mysql_secure_installation
 
 ----初期セットアップ開始----
@@ -155,7 +154,7 @@ mysql> exit
 - 不要ファイルを削除
 - パスの確認
 
-```sh
+```bash
 $ sudo mkdir -p /var/www/oreo_html
 $ cd /var/www/oreo_html/
 $ sudo wget https://ja.wordpress.org/latest-ja.tar.gz
@@ -172,7 +171,7 @@ $ pwd
 - ドキュメントルートの場所を変更
     - 42行目の root の場所を上記で実行した pwd 結果に置き換える
 
-```sh
+```bash
 $ sudo cp -ip /etc/nginx/nginx.conf /etc/nginx/nginx.conf_20200622
 $ sudo vim /etc/nginx/nginx.conf
 => root         /var/www/oreo_html/wordpress;
@@ -180,7 +179,7 @@ $ sudo vim /etc/nginx/nginx.conf
 
 - config ファイルの中身が正しいか確認
 
-```sh
+```bash
 $ sudo nginx -t
 => nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 => nginx: configuration file /etc/nginx/nginx.conf test is successful
@@ -188,7 +187,7 @@ $ sudo nginx -t
 
 - nginx 再起動
 
-```sh
+```bash
 $ sudo systemctl restart nginx
 ```
 
@@ -207,7 +206,7 @@ $ sudo systemctl restart nginx
 
 - wp-config.phpの作成
 
-```sh
+```bash
 $ sudo vim /var/www/oreo_html/wordpress/wp-config.php
 $ sudo chown nginx. -R /var/www/oreo_html/
 ```

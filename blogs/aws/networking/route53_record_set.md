@@ -29,11 +29,11 @@ categories:
 
 ここでは､ユーザー配下の `work` というディレクトリに実行ファイルを置いていますが､任意の所に置いてください｡
 
-```sh
+```bash
 cd ; mkdir work ; vim /home/UserName/work/route53.sh
 ```
 
-```sh
+```bash
 #!/bin/bash
 DOMAIN_NAME="ドメイン名を記述"
 IP_ADDRESS=`curl -s inet-ip.info`
@@ -62,11 +62,11 @@ aws route53 change-resource-record-sets --hosted-zone-id ${HOSTED_ZONE_ID} --cha
 
 - ファイルの場所
 
-```sh
+```bash
 sudo vim /etc/systemd/system/route53_set.service
 ```
 
-```sh
+```bash
 [Unit]
 Description= Route53 Set And TimeLoop
 After=network-online.target
@@ -86,13 +86,13 @@ WantedBy=multi-user.target
 
 - ファイルの場所
 
-```sh
+```bash
 sudo vim /etc/systemd/system/route53_set.timer
 ```
 
 毎時40分に実施する場合は､`OnCalendar=*-*-* *:40:00` と記述
 
-```sh
+```bash
 [Unit]
 Description=Route53 And TimeLoop
 

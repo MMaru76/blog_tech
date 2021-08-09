@@ -27,7 +27,7 @@ categories:
 
 説明なんて不要だから､ちゃちゃっと初めたい人向け
 
-```sh
+```bash
 $ cd /opt/minecraft/
 $ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 $ java -jar BuildTools.jar
@@ -71,7 +71,7 @@ $ sudo systemctl status minecraft_server.service
 
 SELinux と Firewall は無効にします(必要な場合は､別途準備が必要です<作成中>)｡
 
-```sh
+```bash
 $ sudo sed -i -e "s/enforcing/disabled/g" /etc/selinux/config
 $ sudo systemctl stop firewalld ; sudo systemctl disable firewalld
 $ sudo reboot
@@ -84,7 +84,7 @@ $ sudo reboot
 1. Java と Git のインストール
 2. Java のバージョン確認
 
-```sh
+```bash
 $ sudo yum -y install java git
 $ java -version
 => openjdk version "1.8.0_252"
@@ -100,7 +100,7 @@ $ java -version
 2. User.Groupの変更
    - TestUser を任意のユーザー名に変更
 
-```sh
+```bash
 $ sudo mkdir /opt/minecraft
 $ sudo chown TestUser. /opt/minecraft/
 ```
@@ -114,7 +114,7 @@ $ sudo chown TestUser. /opt/minecraft/
 4. 【spigot-X.XX.X.jar】ファイルを【server.jar】へ変更
 5. `start.sh` ファイルを作成
 
-```sh
+```bash
 $ cd /opt/minecraft/
 $ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 $ java -jar BuildTools.jar
@@ -131,7 +131,7 @@ $ touch start.sh
 - 最大メモリの指定
   - Xmx2048M
 
-```sh
+```bash
 #!/bin/sh
 #screen -AmdS maikura java -Xmx10240M -Xms1024M -jar /opt/minecraft/server.jar nogui
 java -Xmx2048M -Xms1024M -jar /opt/minecraft/server.jar nogui
@@ -145,7 +145,7 @@ java -Xmx2048M -Xms1024M -jar /opt/minecraft/server.jar nogui
 4. 再度 `start.sh` を実行
 5. 各種生成が完了したら､`stop` と入力して一旦サーバを止める
 
-```sh
+```bash
 $ chmod +x start.sh
 $ sh start.sh
 $ sed -i -e "s/eula=false/eula=true/g" eula.txt
@@ -157,7 +157,7 @@ minecraft> stop
 
 - Minecraft ようの Unit 定義ファイルを新規作成
 
-```sh
+```bash
 sudo vim /etc/systemd/system/minecraft_server.service
 ```
 
@@ -184,7 +184,7 @@ WantedBy=multi-user.target
 3. Minecraft サーバーを起動 ON
 4. Minecraft サーバーを自動起動 ON
 
-```sh
+```bash
 $ sudo systemctl daemon-reload
 $ sudo systemctl list-unit-files --type=service | grep "minecraft_server"
 $ sudo systemctl start minecraft_server.service

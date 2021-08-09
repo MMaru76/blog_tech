@@ -23,21 +23,21 @@ CLI 2を入れる利点としては､出力形式をJSONだけではなく､YA
 
 【CentOS 7】パッケージ更新後に再起動を実施
 
-```sh
+```bash
 sudo yum -y update
 sudo reboot
 ```
 
 【CentOS 8/CentOS Stream】 パッケージ更新後に再起動を実施
 
-```sh
+```bash
 sudo dnf -y upgrade
 sudo reboot
 ```
 
 ## AWS CLI 2 インストール
 
-```sh
+```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -45,7 +45,7 @@ sudo ./aws/install
 
 ## AWS CLI 2 バージョンの確認
 
-```sh
+```bash
 aws --version
 
 aws-cli/2.0.19 Python/3.7.3 
